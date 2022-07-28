@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom base styles */
+@layer base {
+}
+
+/* custom components styles */
+@layer components {
+}
+
+/* custom utilities styles */
+@layer utilities {
+}
+
+#ins_sidenav {
+  li:hover {
+    background-color: #dbf4fc !important;
+    opacity: 0.9;
+    cursor: pointer;
+  }
+
+  .Mui-selected {
+    background-color: #dbf4fc !important;
+  }
+}

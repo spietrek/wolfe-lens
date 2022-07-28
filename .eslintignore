@@ -1,0 +1,17 @@
+# Third party
+**/node_modules
+
+# Build products
+public/
+build/
+dist/
+
+index.html
+postcss.config.js
+tailwind.config.js
+vite.config.js
+
+babel.config.js
+jest-setup.ts
+src/**/*.test.tsx
+src/**/*.test.ts
