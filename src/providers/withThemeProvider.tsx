@@ -13,7 +13,7 @@ interface ContextProps {
 }
 
 const Context = React.createContext<ContextProps>({
-  darkMode: false,
+  darkMode: true,
   setDarkMode: () => null,
 })
 
