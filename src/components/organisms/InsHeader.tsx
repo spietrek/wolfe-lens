@@ -4,9 +4,9 @@ import { Badge } from '@mui/material'
 import { Link } from 'react-router-dom'
 import InsButton from '../atoms/InsButton'
 import InsIconButton from '../atoms/InsIconButton'
-import InsImage from '../atoms/InsImage'
 import InsAppBar from '../molecules/InsAppBar'
 import InsDarkModeToggle from '../molecules/InsDarkModeToggle'
+import InsLogo from '../molecules/InsLogo'
 import InsProfile from './InsProfile'
 
 interface IProps {
@@ -23,11 +23,7 @@ const InsHeader = ({ darkMode, onToggleDarkMode }: IProps): JSX.Element => {
 
       <div className="hidden flex-grow md:block">
         <Link to="/" style={{ textAlign: 'center', display: 'block' }}>
-          <InsImage
-            src="assets/images/wolfe-logo.png"
-            alt="Insight"
-            width="100"
-          />
+          <InsLogo />
         </Link>
       </div>
 
