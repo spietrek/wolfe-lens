@@ -1,3 +1,5 @@
+import { PropsWithChildren } from 'react'
+
 interface IProps {
   className?: string
   children?: React.ReactNode
@@ -8,7 +10,7 @@ const InsBodyText = ({
   className,
   children = 'Not Provided',
   inline = false,
-}: IProps): JSX.Element => {
+}: PropsWithChildren<IProps>): JSX.Element => {
   if (inline) {
     return <span className={className}>{children}</span>
   }

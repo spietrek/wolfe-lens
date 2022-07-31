@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { PropsWithChildren, useState } from 'react'
 import { KeyboardArrowDown } from '@mui/icons-material'
 import { Menu, MenuItem } from '@mui/material'
 import clsx from 'clsx'
@@ -10,7 +10,9 @@ interface IProps {
   className?: string
 }
 
-const InsProfile = ({ className = '' }: IProps): JSX.Element => {
+const InsProfile = ({
+  className = '',
+}: PropsWithChildren<IProps>): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
 

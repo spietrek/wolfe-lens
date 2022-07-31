@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react'
 import { IconButton } from '@mui/material'
 import {
   ButtonAriaPopus,
@@ -27,7 +28,7 @@ const InsIconButton = ({
   onClick,
   size = 'medium',
   style = {},
-}: IProps): JSX.Element => {
+}: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <IconButton
       aria-controls={ariaControls}

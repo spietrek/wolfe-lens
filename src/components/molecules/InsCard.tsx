@@ -1,4 +1,4 @@
-import { Children } from 'react'
+import { Children, PropsWithChildren } from 'react'
 
 interface IProps {
   children: React.ReactNode
@@ -10,7 +10,7 @@ interface IChild {
   }
 }
 
-const InsCard = ({ children }: IProps): JSX.Element => {
+const InsCard = ({ children }: PropsWithChildren<IProps>): JSX.Element => {
   const subComponentList = Object.keys(InsCard)
 
   const subComponents = subComponentList.map(key => {

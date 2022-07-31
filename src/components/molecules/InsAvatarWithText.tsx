@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react'
 import InsAvatar from '../atoms/InsAvatar'
 import InsBodyText from '../atoms/InsBodyText'
 
@@ -11,7 +12,7 @@ const InsAvatarWithText = ({
   title,
   avatar,
   subtitle,
-}: IProps): JSX.Element => {
+}: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <>
       <div className="flex">

@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react'
 import { Avatar } from '@mui/material'
 
 type AvatarVariants = 'square' | 'rounded' | 'circular'
@@ -16,7 +17,7 @@ const InsAvatar = ({
   src = '',
   variant = 'rounded',
   style,
-}: IProps): JSX.Element => {
+}: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <Avatar alt={alt} src={src} variant={variant} style={style}>
       {icon}

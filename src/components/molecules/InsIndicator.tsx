@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react'
 import { CircularProgress } from '@mui/material'
 
 interface IProps {
@@ -5,7 +6,10 @@ interface IProps {
   children?: React.ReactNode
 }
 
-const InsIndicator = ({ isLoading, children }: IProps): JSX.Element => {
+const InsIndicator = ({
+  isLoading,
+  children,
+}: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <>
       {isLoading ? (

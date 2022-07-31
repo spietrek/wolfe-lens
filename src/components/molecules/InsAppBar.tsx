@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react'
 import { AppBar, AppBarProps, styled, Toolbar } from '@mui/material'
 
 const StyledAppBar = styled(AppBar)<AppBarProps>(({ theme }) => ({
@@ -22,7 +23,7 @@ const InsAppBar = ({
   position = 'static',
   children = null,
   style,
-}: IProps): JSX.Element => {
+}: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <StyledAppBar
       color={color}

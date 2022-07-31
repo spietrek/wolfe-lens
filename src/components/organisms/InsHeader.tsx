@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react'
 import SearchIcon from '@mui/icons-material/Search'
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag'
 import { Badge } from '@mui/material'
@@ -14,7 +15,10 @@ interface IProps {
   onToggleDarkMode: () => void
 }
 
-const InsHeader = ({ darkMode, onToggleDarkMode }: IProps): JSX.Element => {
+const InsHeader = ({
+  darkMode,
+  onToggleDarkMode,
+}: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <InsAppBar position="static">
       <InsButton color="inherit">Bikes</InsButton>

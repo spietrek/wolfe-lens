@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react'
 import { Button } from '@mui/material'
 import {
   ButtonAriaPopus,
@@ -42,7 +43,7 @@ const InsButton = ({
   tabIndex = undefined,
   type = 'button',
   variant = 'text',
-}: IProps): JSX.Element => {
+}: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <Button
       aria-controls={ariaControls}

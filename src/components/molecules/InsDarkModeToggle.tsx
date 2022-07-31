@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 import InsIconButton from '../atoms/InsIconButton'
@@ -12,7 +13,7 @@ const InsDarkModeToggle = ({
   darkMode,
   style,
   onToggle,
-}: IProps): JSX.Element => {
+}: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <InsIconButton onClick={onToggle} style={style}>
       {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}

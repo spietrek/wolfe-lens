@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react'
 import { Drawer } from '@mui/material'
 
 interface IProps {
@@ -12,7 +13,7 @@ const InsDrawer = ({
   open = false,
   onClose,
   children = null,
-}: IProps): JSX.Element => (
+}: PropsWithChildren<IProps>): JSX.Element => (
   <Drawer anchor={anchor} open={open} onClose={onClose}>
     {children}
   </Drawer>

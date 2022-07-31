@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react'
 import {
   CheckCircleOutlined,
   VisibilityOutlined,
@@ -13,7 +14,7 @@ interface IProps {
 const InsStatusIcon = ({
   style = {},
   status = 'inReview',
-}: IProps): JSX.Element => {
+}: PropsWithChildren<IProps>): JSX.Element => {
   if (status === 'inReview') {
     return <VisibilityOutlined style={style} />
   }
