@@ -22,8 +22,8 @@ const InsProductCards = ({
 
       <div className="flex min-w-[800px] overflow-x-auto">
         {items.map((item, index) => (
-          <Link to={item.href} key={index}>
-            <CardContent key={index} style={{ flex: '0 1 auto' }}>
+          <CardContent key={index} style={{ flex: '0 1 auto' }}>
+            <Link to={item.href}>
               <InsImage
                 style={{ minWidth: '268px' }}
                 src={item.imgSrc}
@@ -34,8 +34,8 @@ const InsProductCards = ({
                 <InsHeading className="mt-1 uppercase">{item.title}</InsHeading>
                 <InsHeading>{item.subtitle}</InsHeading>
               </div>
-            </CardContent>
-          </Link>
+            </Link>
+          </CardContent>
         ))}
       </div>
     </section>
