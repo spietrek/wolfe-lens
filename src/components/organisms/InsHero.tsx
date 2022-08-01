@@ -2,7 +2,7 @@ import { Grid } from '@mui/material'
 import InsImage from '../atoms/InsImage'
 
 const styles: { [key: string]: React.CSSProperties } = {
-  topLeftImage: { width: '100%', minHeight: '670px' },
+  topLeftImage: { width: '100%', height: '100%' },
 }
 
 const InsHero = (): JSX.Element => {

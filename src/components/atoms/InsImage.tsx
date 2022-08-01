@@ -21,16 +21,13 @@ const InsImage = ({
   const zoomStyle: string = zoom ? 'hover:scale-125' : ''
 
   return (
-    <div className="inline-block w-full overflow-hidden">
+    <div className="inline-block overflow-hidden">
       <img
         src={src}
         height={height}
         width={width}
         alt={alt}
-        className={clsx(
-          'block w-full transform transition duration-500',
-          zoomStyle,
-        )}
+        className={clsx('block transform transition duration-500', zoomStyle)}
         style={{ ...style }}
       />
     </div>
