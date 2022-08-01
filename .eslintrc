@@ -44,6 +44,9 @@
     },
     "react": {
       "version": "detect"
+    },
+    "jest": {
+      "version": "detect"
     }
   },
   "plugins": [
@@ -60,14 +63,11 @@
   "rules": {
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/consistent-type-assertions": "off",
-    // "@typescript-eslint/explicit-function-return-type": "warn",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-unsafe-member-access": "warn",
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-use-before-define": "warn",
-    // "@typescript-eslint/promise-function-async": "off",
     "@typescript-eslint/space-before-function-paren": "off",
-
     "@typescript-eslint/require-array-sort-compare": "error",
     "@typescript-eslint/ban-ts-comment": ["error"],
     "@typescript-eslint/no-explicit-any": [
