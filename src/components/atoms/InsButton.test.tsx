@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import InsButton from './InsButton'
@@ -13,9 +12,9 @@ test('should display a disabled button', () => {
   expect(screen.getByRole('button', { name: 'Hello World' })).toBeDisabled()
 })
 
-test('should be able to click on a button', () => {
+test('should be able to click on a button', async () => {
   render(<InsButton>Hello World</InsButton>)
   const testButton = screen.getByRole('button', { name: 'Hello World' })
-  expect(testButton).not.toBeDisabled()
-  userEvent.click(testButton)
+  expect(testButton).toBeEnabled()
+  await userEvent.click(testButton)
 })

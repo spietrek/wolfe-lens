@@ -1,6 +1,10 @@
 import { Grid } from '@mui/material'
 import InsImage from '../atoms/InsImage'
 
+const styles: { [key: string]: React.CSSProperties } = {
+  topLeftImage: { width: '100%', minHeight: '670px' },
+}
+
 const InsHero = (): JSX.Element => {
   return (
     <Grid container spacing={3}>
@@ -14,7 +18,7 @@ const InsHero = (): JSX.Element => {
           src="/assets/images/mb-left-top.png"
           alt="Mountain Bike"
           zoom
-          style={{ width: '100%', minHeight: '670px' }}
+          style={styles.topLeftImage}
         />
       </Grid>
       <Grid item xs={12} sm={6} order={{ xs: 1, sm: 2 }}>

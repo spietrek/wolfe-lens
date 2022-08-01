@@ -10,17 +10,15 @@ const InsIndicator = ({
   isLoading,
   children,
 }: PropsWithChildren<IProps>): JSX.Element => {
-  return (
-    <>
-      {isLoading ? (
-        <div className="flex justify-center">
-          <CircularProgress />
-        </div>
-      ) : (
-        children
-      )}
-    </>
-  )
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center">
+        <CircularProgress />
+      </div>
+    )
+  }
+
+  return <div>{children}</div>
 }
 
 export default InsIndicator

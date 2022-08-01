@@ -13,5 +13,3 @@ vite.config.js
 
 babel.config.js
 jest-setup.ts
-src/**/*.test.tsx
-src/**/*.test.ts

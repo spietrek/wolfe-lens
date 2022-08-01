@@ -25,11 +25,9 @@ const InsCard = ({ children }: PropsWithChildren<IProps>): JSX.Element => {
   })
 
   return (
-    <>
-      <div className="min-h-[250px] max-w-sm overflow-hidden rounded bg-white shadow-lg">
-        {subComponents.map(component => component)}
-      </div>
-    </>
+    <div className="min-h-[250px] max-w-sm overflow-hidden rounded bg-white shadow-lg">
+      {subComponents.map(component => component)}
+    </div>
   )
 }
 

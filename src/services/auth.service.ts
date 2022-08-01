@@ -8,27 +8,21 @@ interface UserProps {
 }
 
 class AuthDataService {
-  async register({
-    email,
-    password,
-  }: UserProps): Promise<AxiosResponse<any, any>> {
+  async register({ email, password }: UserProps): Promise<AxiosResponse> {
     return await http.post('https://reqres.in/api/register', {
       email,
       password,
     })
   }
 
-  async login({
-    email,
-    password,
-  }: UserProps): Promise<AxiosResponse<any, any>> {
+  async login({ email, password }: UserProps): Promise<AxiosResponse> {
     return await http.post('https://reqres.in/api/login', {
       email,
       password,
     })
   }
 
-  async loginFail({ email }: UserProps): Promise<AxiosResponse<any, any>> {
+  async loginFail({ email }: UserProps): Promise<AxiosResponse> {
     return await http.post('https://reqres.in/api/login', {
       email,
     })

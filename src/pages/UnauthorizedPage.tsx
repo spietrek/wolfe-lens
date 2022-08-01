@@ -1,8 +1,8 @@
+import { Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
 const UnauthorizedPage = (): JSX.Element => {
   const navigate = useNavigate()
-
   const goBack = (): void => navigate(-1)
 
   return (
@@ -11,9 +11,7 @@ const UnauthorizedPage = (): JSX.Element => {
       <br />
       <p>You do not have access to the requested page.</p>
       <div>
-        <button className="btn btn-sm mt-4" onClick={goBack}>
-          Go Back
-        </button>
+        <Button onClick={goBack}>Go Back</Button>
       </div>
     </div>
   )

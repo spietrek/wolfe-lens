@@ -14,15 +14,13 @@ const InsAvatarWithText = ({
   subtitle,
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
-    <>
-      <div className="flex">
-        <InsAvatar src={avatar} />
-        <div className="ml-2">
-          <InsBodyText className="text-base font-bold">{title}</InsBodyText>
-          <InsBodyText className="text-sm">{subtitle}</InsBodyText>
-        </div>
+    <div className="flex">
+      <InsAvatar src={avatar} />
+      <div className="ml-2">
+        <InsBodyText className="text-base font-bold">{title}</InsBodyText>
+        <InsBodyText className="text-sm">{subtitle}</InsBodyText>
       </div>
-    </>
+    </div>
   )
 }
 
