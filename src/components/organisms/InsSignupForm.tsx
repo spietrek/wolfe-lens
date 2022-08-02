@@ -3,19 +3,24 @@ import {
   Button,
   Checkbox,
   FormControlLabel,
-  FormGroup,
   Grid,
   TextField,
 } from '@mui/material'
 import InsBodyText from '../atoms/InsBodyText'
 import InsHeading from '../atoms/InsHeading'
 import InsImage from '../atoms/InsImage'
-import { ApprovalRounded } from '@mui/icons-material'
 
 const InsSignupForm = (): JSX.Element => {
   const [email, setEmail] = useState('')
   const [firstName, setFirstName] = useState('')
   const [approve, setApprove] = useState(false)
+
+  const handleSubmit = (): void => {
+    console.log(email, firstName, approve)
+    setEmail('')
+    setFirstName('')
+    setApprove(false)
+  }
 
   return (
     <Grid container style={{ margin: '80px 0', backgroundColor: '#000' }}>
@@ -43,6 +48,7 @@ const InsSignupForm = (): JSX.Element => {
                 <TextField
                   id="email"
                   name="email"
+                  value={email}
                   required
                   fullWidth
                   label="Email Address"
@@ -56,6 +62,7 @@ const InsSignupForm = (): JSX.Element => {
                 <TextField
                   id="firstName"
                   name="firstName"
+                  value={firstName}
                   required
                   fullWidth
                   label="First Name"
@@ -94,6 +101,7 @@ const InsSignupForm = (): JSX.Element => {
                 color="primary"
                 style={{ minWidth: '250px' }}
                 disabled={email.length < 1 || firstName.length < 1 || !approve}
+                onClick={handleSubmit}
               >
                 Sign Me Up
               </Button>
