@@ -3,6 +3,7 @@ import { Container, ContainerProps } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import ReactGA from 'react-ga'
 import { Outlet, useLocation } from 'react-router-dom'
+import InsSignupForm from '@/components/organisms/InsSignupForm'
 import InsFooter from '../components/organisms/InsFooter'
 import InsHeader from '../components/organisms/InsHeader'
 import { useOnline } from '../hooks/useOnline'
@@ -36,9 +37,10 @@ const BasePage = (): JSX.Element => {
   return (
     <StyledContainer maxWidth="lg">
       <InsHeader darkMode={darkMode} onToggleDarkMode={handleToggleDarkMode} />
-      <div className="px-4 lg:px-0">
+      <div className="px-[12px]">
         <Outlet />
       </div>
+      <InsSignupForm />
       <InsFooter />
     </StyledContainer>
   )

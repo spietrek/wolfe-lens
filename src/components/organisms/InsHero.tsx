@@ -8,7 +8,7 @@ const styles: { [key: string]: React.CSSProperties } = {
 const InsHero = (): JSX.Element => {
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12} sm={6} order={{ xs: 2, sm: 1 }}>
+      <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
         <InsImage
           src="/assets/images/mb-left-top.png"
           alt="Mountain Bike"
@@ -16,7 +16,7 @@ const InsHero = (): JSX.Element => {
           style={styles.topLeftImage}
         />
       </Grid>
-      <Grid item xs={12} sm={6} order={{ xs: 1, sm: 2 }}>
+      <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
         <InsImage
           src="/assets/images/mb-right-top.png"
           alt="Mountain Bike"
@@ -28,7 +28,7 @@ const InsHero = (): JSX.Element => {
           alt="Mountain Bike"
         />
       </Grid>
-      <Grid item xs={12} sm={6} order={3}>
+      <Grid item xs={12} md={6} order={3}>
         <InsImage
           style={{ width: '100%' }}
           src="/assets/images/mb-left-bottom.png"
@@ -36,7 +36,7 @@ const InsHero = (): JSX.Element => {
           zoom
         />
       </Grid>
-      <Grid item xs={12} sm={6} order={4}>
+      <Grid item xs={12} md={6} order={4}>
         <InsImage
           src="/assets/images/mb-right-bottom.png"
           alt="Mountain Bike"

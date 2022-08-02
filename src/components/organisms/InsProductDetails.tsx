@@ -12,7 +12,7 @@ import {
 import InsBodyText from '../atoms/InsBodyText'
 import InsHeading from '../atoms/InsHeading'
 
-const StyledAccordion = styled(Accordion)<AccordionProps>(({ theme }) => ({
+const StyledAccordion = styled(Accordion)<AccordionProps>(() => ({
   borderTop: '1px solid #fff',
   borderBottom: '1px solid #fff',
   backgroundColor: 'inherit',
@@ -25,7 +25,7 @@ const StyledAccordion = styled(Accordion)<AccordionProps>(({ theme }) => ({
 })) as typeof Accordion
 
 const StyledAccordionSummary = styled(AccordionSummary)<AccordionSummaryProps>(
-  ({ theme }) => ({
+  () => ({
     padding: '8px 0',
     '& .MuiTypography-body1': {
       fontSize: '22px',
@@ -36,9 +36,9 @@ const StyledAccordionSummary = styled(AccordionSummary)<AccordionSummaryProps>(
 
 const InsProductDetails = (): JSX.Element => {
   return (
-    <Grid container style={{ margin: '40px 0' }}>
-      <Grid item xs={12} sm={6}>
-        <div className="mr-8">
+    <Grid container style={{ margin: '80px 0', padding: '0 12x' }}>
+      <Grid item xs={12} md={6}>
+        <div className="mb-6 mr-0 lg:mr-8 lg:mb-0">
           <InsHeading className="text-6xl font-bold uppercase">
             Climb. Descend. Smile. Repeat.
           </InsHeading>
@@ -55,8 +55,8 @@ const InsProductDetails = (): JSX.Element => {
           </InsBodyText>
         </div>
       </Grid>
-      <Grid item xs={12} sm={6}>
-        <div className="ml-8">
+      <Grid item xs={12} md={6}>
+        <div className="ml-0 lg:ml-8">
           <InsHeading className="text-sm font-bold uppercase">
             Product Info
           </InsHeading>
