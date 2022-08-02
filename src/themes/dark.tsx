@@ -10,15 +10,6 @@ const theme = createTheme({
       default: '#1e1e1e',
     },
   },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 800,
-      md: 900,
-      lg: 1200,
-      xl: 1536,
-    },
-  },
 })
 
 export default theme
