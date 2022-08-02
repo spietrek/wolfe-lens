@@ -13,9 +13,9 @@ const InsFooterItem = ({ item }: PropsWithChildren<IProps>): JSX.Element => {
 
   return (
     <>
-      <InsHeading className="mb-3 text-xs uppercase">{label}</InsHeading>
+      <InsHeading className="mb-3 text-sm uppercase">{label}</InsHeading>
       {links.map((link, index) => (
-        <div key={index} className="mb-1 text-xs">
+        <div key={index} className="mb-1 text-sm">
           <Link to={link.href}>{link.label}</Link>
         </div>
       ))}

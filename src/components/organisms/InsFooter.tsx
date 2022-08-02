@@ -63,11 +63,11 @@ const InsFooter = (): JSX.Element => {
       <div className="w-full bg-slate-300 p-6 text-center dark:bg-black">
         <InsLogo />
         <Grid container spacing={3} style={{ marginTop: '4px' }}>
-          <Grid item xs={12} sm={colCount}>
+          <Grid item xs={12} md={colCount}>
             <InsFooterAddress />
           </Grid>
           {footerItems.map((item, index) => (
-            <Grid key={index} item xs={12} sm={colCount}>
+            <Grid key={index} item xs={12} md={colCount}>
               <InsFooterItem item={item} />
             </Grid>
           ))}
