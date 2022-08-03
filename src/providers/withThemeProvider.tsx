@@ -22,7 +22,7 @@ interface Props {
 }
 
 const Provider: React.FC<Props> = ({ children }) => {
-  const [darkMode, setDarkMode] = useLocalStorage('insight_dark_mode', false)
+  const [darkMode, setDarkMode] = useLocalStorage('insight_dark_mode', true)
 
   return (
     <Context.Provider
