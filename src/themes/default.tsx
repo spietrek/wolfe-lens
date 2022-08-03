@@ -1,11 +1,13 @@
-import { blueGrey } from '@mui/material/colors'
 import { createTheme } from '@mui/material/styles'
 
 const theme = createTheme({
   palette: {
     mode: 'light',
+    success: {
+      main: '#90caf9',
+    },
     primary: {
-      main: blueGrey[500],
+      main: '#06AAAA',
     },
     background: {
       default: '#f0f2f5',

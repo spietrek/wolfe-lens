@@ -207,6 +207,9 @@ const InsOrderInfo = (): JSX.Element => {
           variant="contained"
           color="primary"
           style={{ minWidth: '250px' }}
+          disabled={
+            color.length === 0 || size.length === 0 || acquire.length === 0
+          }
         >
           Add to Cart
         </Button>
