@@ -25,7 +25,7 @@ const InsProductCards = ({
           <CardContent key={index} style={{ flex: '0 1 auto' }}>
             <Link to={item.href}>
               <InsImage
-                style={{ minWidth: '268px' }}
+                style={{ minWidth: '262px' }}
                 src={item.imgSrc}
                 alt="product1"
                 zoom

@@ -38,7 +38,7 @@ const InsHeader = ({
         <SearchIcon />
       </InsIconButton>
       <InsIconButton>
-        <Badge badgeContent={2} color="success">
+        <Badge badgeContent={2} color="primary">
           <ShoppingBagIcon />
         </Badge>
       </InsIconButton>
