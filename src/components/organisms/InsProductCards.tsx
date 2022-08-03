@@ -20,7 +20,7 @@ const InsProductCards = ({
         {title}
       </InsHeading>
 
-      <div className="flex min-w-[800px] overflow-x-auto">
+      <div className="flex overflow-x-auto">
         {items.map((item, index) => (
           <CardContent key={index} style={{ flex: '0 1 auto' }}>
             <Link to={item.href}>

@@ -91,18 +91,6 @@ const InsOrderInfo = (): JSX.Element => {
             </ToggleButton>
 
             <ToggleButton
-              value="white"
-              key="white"
-              style={{
-                height: '42px',
-                width: '42px',
-                backgroundColor: '#fff',
-                color: '#ccc',
-              }}
-            >
-              W
-            </ToggleButton>
-            <ToggleButton
               value="yellow"
               key="yellow"
               style={{
@@ -116,7 +104,7 @@ const InsOrderInfo = (): JSX.Element => {
             </ToggleButton>
           </StyledToggleButtonGroup>
         </div>
-        <div className="ml-8">
+        <div className="ml-4">
           <InsHeading className="mb-2 text-sm font-bold uppercase">
             Size
           </InsHeading>

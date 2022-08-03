@@ -13,7 +13,7 @@ const TRACKING_ID = 'UA-43288618-2'
 ReactGA.initialize(TRACKING_ID)
 
 const StyledContainer = styled(Container)<ContainerProps>(({ theme }) => ({
-  borderTop: `3px solid ${theme.palette.primary.main}`,
+  borderTop: `5px solid ${theme.palette.primary.main}`,
   padding: '0 !important',
   overflowX: 'hidden',
 })) as typeof Container
