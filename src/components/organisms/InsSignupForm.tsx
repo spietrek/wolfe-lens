@@ -6,6 +6,7 @@ import {
   Grid,
   TextField,
 } from '@mui/material'
+import { useDarkMode } from '../../providers/withThemeProvider'
 import InsBodyText from '../atoms/InsBodyText'
 import InsHeading from '../atoms/InsHeading'
 import InsImage from '../atoms/InsImage'
@@ -14,6 +15,7 @@ const InsSignupForm = (): JSX.Element => {
   const [email, setEmail] = useState('')
   const [firstName, setFirstName] = useState('')
   const [approve, setApprove] = useState(false)
+  const { darkMode } = useDarkMode()
 
   const handleSubmit = (): void => {
     console.log(email, firstName, approve)
@@ -22,8 +24,10 @@ const InsSignupForm = (): JSX.Element => {
     setApprove(false)
   }
 
+  const bgColor = darkMode ? '#000' : '#cbd5e1'
+
   return (
-    <Grid container style={{ margin: '80px 0', backgroundColor: '#000' }}>
+    <Grid container style={{ margin: '80px 0', backgroundColor: `${bgColor}` }}>
       <Grid item xs={12} md={6}>
         <div className="p-8">
           <InsImage
