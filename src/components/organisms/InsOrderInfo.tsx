@@ -1,5 +1,14 @@
-import { useState } from 'react'
-import { Button, styled, ToggleButton, ToggleButtonGroup } from '@mui/material'
+import { SetStateAction, useState } from 'react'
+import {
+  Button,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+  styled,
+  ToggleButton,
+  ToggleButtonGroup,
+} from '@mui/material'
+import { Link } from 'react-router-dom'
 import InsHeading from '../atoms/InsHeading'
 
 const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
@@ -26,6 +35,7 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
 const InsOrderInfo = (): JSX.Element => {
   const [color, setColor] = useState('')
   const [size, setSize] = useState('')
+  const [acquire, setAcquire] = useState('shipIt')
 
   const handleColorChange = (
     event: React.MouseEvent<HTMLElement>,
@@ -41,6 +51,12 @@ const InsOrderInfo = (): JSX.Element => {
     setSize(nextView)
   }
 
+  const handleAcquireChange = (event: {
+    target: { value: SetStateAction<string> }
+  }): void => {
+    setAcquire(event.target.value)
+  }
+
   return (
     <div className="mt-6">
       <div className="flex">
@@ -52,9 +68,13 @@ const InsOrderInfo = (): JSX.Element => {
         </InsHeading>
       </div>
 
+      <InsHeading className="text-md text-gray-400">
+        29 Carbon - 140mm
+      </InsHeading>
+
       <div className="my-6 flex">
         <div>
-          <InsHeading className="mb-2 text-sm font-bold uppercase">
+          <InsHeading className="mb-2 text-sm uppercase text-gray-400">
             Color
           </InsHeading>
 
@@ -73,9 +93,7 @@ const InsOrderInfo = (): JSX.Element => {
                 backgroundColor: '#000',
                 color: '#ccc',
               }}
-            >
-              B
-            </ToggleButton>
+            />
 
             <ToggleButton
               value="red"
@@ -86,9 +104,7 @@ const InsOrderInfo = (): JSX.Element => {
                 backgroundColor: '#ff0000',
                 color: '#ccc',
               }}
-            >
-              R
-            </ToggleButton>
+            />
 
             <ToggleButton
               value="yellow"
@@ -99,13 +115,11 @@ const InsOrderInfo = (): JSX.Element => {
                 backgroundColor: '#f9db24',
                 color: '#ccc',
               }}
-            >
-              Y
-            </ToggleButton>
+            />
           </StyledToggleButtonGroup>
         </div>
         <div className="ml-4">
-          <InsHeading className="mb-2 text-sm font-bold uppercase">
+          <InsHeading className="mb-2 text-sm uppercase text-gray-400">
             Size
           </InsHeading>
 
@@ -146,6 +160,44 @@ const InsOrderInfo = (): JSX.Element => {
             </ToggleButton>
           </StyledToggleButtonGroup>
         </div>
+      </div>
+
+      <div className="mb-6">
+        <RadioGroup
+          aria-labelledby="demo-radio-buttons-group-label"
+          defaultValue={acquire}
+          name="radio-buttons-group"
+          onChange={handleAcquireChange}
+        >
+          <div className="border border-[#333] p-2">
+            <FormControlLabel
+              value="shipIt"
+              control={<Radio />}
+              label="SHIP IT TO ME"
+            />
+            <InsHeading className="ml-8 text-xs uppercase text-gray-400">
+              Free shiping and returns
+            </InsHeading>
+          </div>
+          <div className="border border-t-0 border-[#333] p-2">
+            <FormControlLabel
+              value="pickup"
+              control={<Radio />}
+              label="PICKUP AT DEALER"
+            />
+            <InsHeading className="ml-8 text-xs uppercase text-gray-400">
+              2 available at this location
+              <div>
+                <span className="mr-2 font-bold uppercase">
+                  Stans Bike Shop
+                </span>
+                <Link to="/" style={{ textDecoration: 'underline' }}>
+                  Change Location
+                </Link>
+              </div>
+            </InsHeading>
+          </div>
+        </RadioGroup>
       </div>
 
       <div>
