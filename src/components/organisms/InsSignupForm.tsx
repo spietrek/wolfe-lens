@@ -1,12 +1,5 @@
 import { useState } from 'react'
-import {
-  Button,
-  Checkbox,
-  FormControlLabel,
-  Grid,
-  TextField,
-} from '@mui/material'
-import { useDarkMode } from '../../providers/withThemeProvider'
+import { Button, Checkbox, FormControlLabel, TextField } from '@mui/material'
 import InsBodyText from '../atoms/InsBodyText'
 import InsHeading from '../atoms/InsHeading'
 import InsImage from '../atoms/InsImage'
@@ -15,7 +8,6 @@ const InsSignupForm = (): JSX.Element => {
   const [email, setEmail] = useState('')
   const [firstName, setFirstName] = useState('')
   const [approve, setApprove] = useState(false)
-  const { darkMode } = useDarkMode()
 
   const handleSubmit = (): void => {
     console.log(email, firstName, approve)
@@ -24,30 +16,25 @@ const InsSignupForm = (): JSX.Element => {
     setApprove(false)
   }
 
-  const bgColor = darkMode ? '#000' : '#cbd5e1'
-
   return (
-    <Grid container style={{ margin: '80px 0', backgroundColor: `${bgColor}` }}>
-      <Grid item xs={12} md={6}>
-        <div className="p-8">
-          <InsImage
-            src="/assets/images/signup-form-mtb.jpg"
-            alt="Signup Form"
-          />
-        </div>
-      </Grid>
+    <div className="lg:p0 mt-[80px] xs:px-4 lg:h-full">
+      <div className="lg:relative">
+        <InsImage
+          src="/assets/images/mtb-signup-form.png"
+          alt="Signup Form"
+          className="lg:relative lg:w-2/3"
+        />
 
-      <Grid item xs={12} md={6}>
-        <div className="p-8">
-          <InsHeading className="mb-4 text-4xl font-bold uppercase">
-            Send It!
+        <div className="bg-white p-6 dark:bg-black lg:absolute lg:top-1/2 lg:bottom-0 lg:right-0 lg:z-10 lg:h-[280px] lg:w-2/3 lg:translate-y-[-50%] lg:translate-x-0 lg:transform">
+          <InsHeading className="text-3xl font-bold uppercase">
+            Sign up for the Wolfe Up
           </InsHeading>
-          <InsHeading className="text-4xl font-bold">
-            Sign up for The Wolfe Up - the weekly Wolfe newsletter here!
+          <InsHeading className="text-xl">
+            The Weekly Wolfe Newsletter
           </InsHeading>
 
           <form>
-            <div className="my-4 flex">
+            <div className="mt-4 mb-2 flex">
               <div className="mr-2 flex-1">
                 <TextField
                   id="email"
@@ -57,12 +44,14 @@ const InsSignupForm = (): JSX.Element => {
                   fullWidth
                   label="Email Address"
                   type="email"
-                  autoComplete="email"
-                  variant="filled"
+                  autoComplete="off"
+                  size="small"
+                  variant="outlined"
+                  color="primary"
                   onChange={e => setEmail(e.target.value)}
                 />
               </div>
-              <div className="ml-2 flex-1">
+              <div className="mr-2 flex-1">
                 <TextField
                   id="firstName"
                   name="firstName"
@@ -70,50 +59,54 @@ const InsSignupForm = (): JSX.Element => {
                   required
                   fullWidth
                   label="First Name"
-                  variant="filled"
+                  autoComplete="off"
+                  size="small"
+                  variant="outlined"
+                  color="primary"
                   onChange={e => setFirstName(e.target.value)}
                 />
               </div>
+              <div className="ml-2 flex-1">
+                <Button
+                  type="submit"
+                  size="medium"
+                  variant="contained"
+                  color="primary"
+                  disabled={
+                    email.length < 1 || firstName.length < 1 || !approve
+                  }
+                  style={{ width: '100%' }}
+                  onClick={handleSubmit}
+                >
+                  Sign Me Up
+                </Button>
+              </div>
             </div>
-
             <FormControlLabel
               control={
                 <Checkbox
                   checked={approve}
+                  size="small"
                   onChange={e => setApprove(e.target.checked)}
                 />
               }
-              label="Yes! Send me emails with news from Wolfe Bikes"
+              label={
+                <InsBodyText className="text-sm">
+                  Yes! Send me emails with news from Wolfe Bikes
+                </InsBodyText>
+              }
             />
 
-            <InsBodyText className="my-4">
+            <InsBodyText className="text-sm">
               We won&apos;t spam you, and we won&apos;t sell your info. Your may
-              unsubscribe at any time.
+              unsubscribe at any time. By submitting, you consent to allow Wolfe
+              Bikes to store and process your personal information to provide
+              you the content requested.
             </InsBodyText>
-
-            <InsBodyText>
-              By clicking below, you consent to allow Wolfe Bikes to store and
-              process your personal information to provide you the content
-              requested.
-            </InsBodyText>
-
-            <div className="mt-8">
-              <Button
-                type="submit"
-                size="large"
-                variant="contained"
-                color="primary"
-                style={{ minWidth: '250px' }}
-                disabled={email.length < 1 || firstName.length < 1 || !approve}
-                onClick={handleSubmit}
-              >
-                Sign Me Up
-              </Button>
-            </div>
           </form>
         </div>
-      </Grid>
-    </Grid>
+      </div>
+    </div>
   )
 }
 

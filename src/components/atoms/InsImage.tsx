@@ -5,25 +5,25 @@ interface IProps {
   src: string
   alt: string
   height?: string
-  width?: string
-  style?: React.CSSProperties
+  className?: string
 }
 
 const InsImage = ({
   src,
   alt,
   height = 'auto',
-  width = 'auto',
-  style,
+  className,
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <img
       src={src}
       height={height}
-      width={width}
       alt={alt}
-      className="block w-full transform transition duration-500"
-      style={{ ...style }}
+      className={clsx(
+        'block w-full transform transition duration-500',
+        className,
+        className,
+      )}
     />
   )
 }
