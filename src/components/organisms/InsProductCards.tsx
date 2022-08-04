@@ -28,7 +28,6 @@ const InsProductCards = ({
                 style={{ minWidth: '262px' }}
                 src={item.imgSrc}
                 alt="product1"
-                zoom
               />
               <div>
                 <InsHeading className="mt-1 uppercase">{item.title}</InsHeading>

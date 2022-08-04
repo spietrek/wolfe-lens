@@ -13,16 +13,11 @@ const InsHero = (): JSX.Element => {
         <InsImage
           src="/assets/images/mb-left-top.png"
           alt="Mountain Bike"
-          zoom
           style={styles.topLeftImage}
         />
       </Grid>
       <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
-        <InsImage
-          src="/assets/images/mb-right-top.png"
-          alt="Mountain Bike"
-          zoom
-        />
+        <InsImage src="/assets/images/mb-right-top.png" alt="Mountain Bike" />
         <InsOrderInfo />
       </Grid>
       <Grid item xs={12} md={6} order={3}>
@@ -30,14 +25,12 @@ const InsHero = (): JSX.Element => {
           style={{ width: '100%' }}
           src="/assets/images/mb-left-bottom.png"
           alt="Mountain Bike"
-          zoom
         />
       </Grid>
       <Grid item xs={12} md={6} order={4}>
         <InsImage
           src="/assets/images/mb-right-bottom.png"
           alt="Mountain Bike"
-          zoom
         />
       </Grid>
     </Grid>
