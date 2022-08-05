@@ -12,6 +12,7 @@ interface IProps {
   ariaHasPopup?: ButtonAriaPopus
   ariaExpanded?: boolean | undefined
   children?: React.ReactNode
+  className?: string
   color?: ButtonColors
   disabled?: boolean
   endIcon?: React.ReactNode
@@ -31,6 +32,7 @@ const InsButton = ({
   ariaHasPopup = undefined,
   ariaExpanded = undefined,
   children,
+  className,
   color = 'inherit',
   disabled = false,
   endIcon = null,
@@ -49,6 +51,7 @@ const InsButton = ({
       aria-controls={ariaControls}
       aria-haspopup={ariaHasPopup}
       aria-expanded={ariaExpanded}
+      className={className}
       color={color}
       disabled={disabled}
       endIcon={endIcon}

@@ -32,7 +32,7 @@ const InsAppBar = ({
       position={position}
       style={style}
     >
-      <Toolbar style={{ padding: '0' }}>{children}</Toolbar>
+      <Toolbar className="p-0">{children}</Toolbar>
     </StyledAppBar>
   )
 }

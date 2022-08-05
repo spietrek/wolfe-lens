@@ -62,7 +62,7 @@ const InsFooter = (): JSX.Element => {
     >
       <div className="w-full bg-slate-300 p-6 text-center dark:bg-black">
         <InsLogo />
-        <Grid container spacing={3} style={{ marginTop: '4px' }}>
+        <Grid container spacing={3} className="mt-[4px]">
           <Grid item xs={12} md={colCount}>
             <InsFooterAddress />
           </Grid>

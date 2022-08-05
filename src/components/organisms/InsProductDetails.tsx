@@ -36,7 +36,7 @@ const StyledAccordionSummary = styled(AccordionSummary)<AccordionSummaryProps>(
 
 const InsProductDetails = (): JSX.Element => {
   return (
-    <Grid container style={{ margin: '80px 0', padding: '0 12x' }}>
+    <Grid container className="my-[80px] mx-0 py-0 px-[12px]">
       <Grid item xs={12} md={6}>
         <div className="mb-6 mr-0 lg:mr-8 lg:mb-0">
           <InsHeading className="text-6xl font-bold uppercase">
@@ -62,7 +62,7 @@ const InsProductDetails = (): JSX.Element => {
           </InsHeading>
 
           <StyledAccordion
-            style={{ marginTop: '24px' }}
+            className="mt-[24px]"
             disableGutters
             elevation={0}
             square

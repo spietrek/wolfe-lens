@@ -29,7 +29,7 @@ const InsProfile = ({
       <InsAvatar
         variant="circular"
         src="assets/images/me.jpg"
-        style={{ width: 24, height: 24, marginLeft: '8px' }}
+        className="ml-2 h-[24px] w-[24px]"
       />
 
       <InsButton

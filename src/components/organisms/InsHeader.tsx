@@ -26,7 +26,7 @@ const InsHeader = ({
       <InsButton color="inherit">Parts</InsButton>
 
       <div className="hidden flex-grow md:block">
-        <Link to="/" style={{ textAlign: 'center', display: 'block' }}>
+        <Link to="/" className="block text-center">
           <InsLogo />
         </Link>
       </div>

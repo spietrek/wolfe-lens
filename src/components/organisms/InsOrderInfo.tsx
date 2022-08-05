@@ -87,34 +87,19 @@ const InsOrderInfo = (): JSX.Element => {
             <ToggleButton
               value="black"
               key="black"
-              style={{
-                height: '42px',
-                width: '42px',
-                backgroundColor: '#000',
-                color: '#ccc',
-              }}
+              className="h-[42px] w-[42px] bg-[#000] text-[#ccc]"
             />
 
             <ToggleButton
               value="red"
               key="red"
-              style={{
-                height: '42px',
-                width: '42px',
-                backgroundColor: '#ff0000',
-                color: '#ccc',
-              }}
+              className="h-[42px] w-[42px] bg-[#ff0000] text-[#ccc]"
             />
 
             <ToggleButton
               value="yellow"
               key="yellow"
-              style={{
-                height: '42px',
-                width: '42px',
-                backgroundColor: '#f9db24',
-                color: '#ccc',
-              }}
+              className="h-[42px] w-[42px] bg-[#f9db24] text-[#ccc]"
             />
           </StyledToggleButtonGroup>
         </div>
@@ -132,21 +117,21 @@ const InsOrderInfo = (): JSX.Element => {
             <ToggleButton
               value="small"
               key="small"
-              style={{ height: '42px', width: '42px' }}
+              className="h-[42px] w-[42px]"
             >
               S
             </ToggleButton>
             <ToggleButton
               value="medium"
               key="medium"
-              style={{ height: '42px', width: '42px' }}
+              className="h-[42px] w-[42px]"
             >
               M
             </ToggleButton>
             <ToggleButton
               value="large"
               key="large"
-              style={{ height: '42px', width: '42px' }}
+              className="h-[42px] w-[42px]"
             >
               L
             </ToggleButton>
@@ -154,7 +139,7 @@ const InsOrderInfo = (): JSX.Element => {
             <ToggleButton
               value="extraLarge"
               key="extraLarge"
-              style={{ height: '42px', width: '42px' }}
+              className="h-[42px] w-[42px]"
             >
               XL
             </ToggleButton>
@@ -165,7 +150,7 @@ const InsOrderInfo = (): JSX.Element => {
       <div className="mb-6">
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
-          defaultValue={acquire}
+          value={acquire}
           name="radio-buttons-group"
           onChange={handleAcquireChange}
         >
@@ -191,7 +176,7 @@ const InsOrderInfo = (): JSX.Element => {
                 <span className="mr-2 font-bold uppercase">
                   Stans Bike Shop
                 </span>
-                <Link to="/" style={{ textDecoration: 'underline' }}>
+                <Link to="/" className="normal-case underline">
                   Change Location
                 </Link>
               </div>
@@ -206,7 +191,7 @@ const InsOrderInfo = (): JSX.Element => {
           size="large"
           variant="contained"
           color="primary"
-          style={{ minWidth: '250px' }}
+          className="min-w-[250px]"
           disabled={
             color.length === 0 || size.length === 0 || acquire.length === 0
           }

@@ -22,10 +22,10 @@ const InsProductCards = ({
 
       <div className="flex overflow-x-auto">
         {items.map((item, index) => (
-          <CardContent key={index} style={{ flex: '0 1 auto' }}>
+          <CardContent key={index} className="flex-initial">
             <Link to={item.href}>
               <InsImage
-                style={{ minWidth: '262px' }}
+                className="min-w-[262px]"
                 src={item.imgSrc}
                 alt="product1"
               />

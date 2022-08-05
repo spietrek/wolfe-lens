@@ -1,3 +1,5 @@
+import { CssBaseline } from '@mui/material'
+import { StyledEngineProvider } from '@mui/material/styles'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { AuthProvider } from './hooks/useAuth'
@@ -11,7 +13,10 @@ const App = (): JSX.Element => {
     <Provider store={store}>
       <BrowserRouter>
         <AuthProvider>
-          <AppRoutes />
+          <StyledEngineProvider injectFirst>
+            <CssBaseline />
+            <AppRoutes />
+          </StyledEngineProvider>
         </AuthProvider>
       </BrowserRouter>
     </Provider>
