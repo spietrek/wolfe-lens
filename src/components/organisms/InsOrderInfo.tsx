@@ -87,19 +87,19 @@ const InsOrderInfo = (): JSX.Element => {
             <ToggleButton
               value="black"
               key="black"
-              className="h-[42px] w-[42px] bg-[#000] text-[#ccc]"
+              className="h-[42px] w-[42px] !bg-[#000]"
             />
 
             <ToggleButton
               value="red"
               key="red"
-              className="h-[42px] w-[42px] bg-[#ff0000] text-[#ccc]"
+              className="h-[42px] w-[42px] !bg-[#ff0000]"
             />
 
             <ToggleButton
               value="yellow"
               key="yellow"
-              className="h-[42px] w-[42px] bg-[#f9db24] text-[#ccc]"
+              className="h-[42px] w-[42px] !bg-[#f9db24]"
             />
           </StyledToggleButtonGroup>
         </div>
