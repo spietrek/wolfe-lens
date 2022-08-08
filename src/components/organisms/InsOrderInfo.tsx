@@ -4,35 +4,20 @@ import {
   FormControlLabel,
   Radio,
   RadioGroup,
-  styled,
   ToggleButton,
-  ToggleButtonGroup,
 } from '@mui/material'
 import { Link } from 'react-router-dom'
+import { IProduct } from '@/types/product.type'
+import InsColorToggleButton from '../atoms/InsColorToggleButton'
 import InsHeading from '../atoms/InsHeading'
+import InsToggleButton from '../atoms/InsToggleButton'
+import InsToggleButtonGroup from '../atoms/InsToggleButtonGroup'
 
-const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
-  '& .MuiToggleButtonGroup-grouped': {
-    marginRight: theme.spacing(1),
-    border: '1px solid #333',
-    '&.Mui-disabled': {
-      border: 0,
-    },
-    '&:not(:first-of-type)': {
-      borderRadius: theme.shape.borderRadius,
-      borderLeft: '1px solid #333',
-    },
-    '&:first-of-type': {
-      borderRadius: theme.shape.borderRadius,
-    },
-    '&.Mui-selected': {
-      backgroundColor: 'inherit',
-      border: `2px solid ${theme.palette.primary.main}`,
-    },
-  },
-}))
+interface IProps {
+  product: IProduct
+}
 
-const InsOrderInfo = (): JSX.Element => {
+const InsOrderInfo = ({ product }: IProps): JSX.Element => {
   const [color, setColor] = useState('')
   const [size, setSize] = useState('')
   const [acquire, setAcquire] = useState('shipIt')
@@ -61,15 +46,15 @@ const InsOrderInfo = (): JSX.Element => {
     <div className="mt-6">
       <div className="flex">
         <InsHeading className="flex-1 text-2xl font-bold uppercase">
-          Slayer
+          {product.name}
         </InsHeading>
         <InsHeading className="w-[150px] text-right text-2xl font-bold uppercase">
-          $7299.00
+          {product.financials.price}
         </InsHeading>
       </div>
 
       <InsHeading className="text-md text-gray-400">
-        29 Carbon - 140mm
+        {product.subtitle}
       </InsHeading>
 
       <div className="my-6 flex">
@@ -78,63 +63,37 @@ const InsOrderInfo = (): JSX.Element => {
             Color
           </InsHeading>
 
-          <StyledToggleButtonGroup
+          <InsToggleButtonGroup
             size="large"
             value={color}
-            exclusive
             onChange={handleColorChange}
           >
-            <ToggleButton
-              value="black"
-              key="black"
-              className="h-[42px] w-[42px] !bg-[#000]"
-            />
+            <InsColorToggleButton value="black" key="black" color="#000" />
 
-            <ToggleButton
-              value="red"
-              key="red"
-              className="h-[42px] w-[42px] !bg-[#ff0000]"
-            />
+            <InsColorToggleButton value="red" key="red" color="#ff0000" />
 
-            <ToggleButton
-              value="yellow"
-              key="yellow"
-              className="h-[42px] w-[42px] !bg-[#f9db24]"
-            />
-          </StyledToggleButtonGroup>
+            <InsColorToggleButton value="yellow" key="yellow" color="#f9db24" />
+          </InsToggleButtonGroup>
         </div>
         <div className="ml-4">
           <InsHeading className="mb-2 text-sm uppercase text-gray-400">
             Size
           </InsHeading>
 
-          <StyledToggleButtonGroup
+          <InsToggleButtonGroup
             size="large"
             value={size}
-            exclusive
             onChange={handleSizeChange}
           >
-            <ToggleButton
-              value="small"
-              key="small"
-              className="h-[42px] w-[42px]"
-            >
+            <InsToggleButton value="small" key="small">
               S
-            </ToggleButton>
-            <ToggleButton
-              value="medium"
-              key="medium"
-              className="h-[42px] w-[42px]"
-            >
+            </InsToggleButton>
+            <InsToggleButton value="medium" key="medium">
               M
-            </ToggleButton>
-            <ToggleButton
-              value="large"
-              key="large"
-              className="h-[42px] w-[42px]"
-            >
+            </InsToggleButton>
+            <InsToggleButton value="large" key="large">
               L
-            </ToggleButton>
+            </InsToggleButton>
 
             <ToggleButton
               value="extraLarge"
@@ -143,7 +102,7 @@ const InsOrderInfo = (): JSX.Element => {
             >
               XL
             </ToggleButton>
-          </StyledToggleButtonGroup>
+          </InsToggleButtonGroup>
         </div>
       </div>
 

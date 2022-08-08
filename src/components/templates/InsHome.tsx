@@ -1,3 +1,4 @@
+import { IProduct } from '@/types/product.type'
 import InsIndicator from '../molecules/InsIndicator'
 import InsHero from '../organisms/InsHero'
 import InsProductCards from '../organisms/InsProductCards'
@@ -57,13 +58,17 @@ const alsoLikeProducts = [
   },
 ]
 
-const InsHome = (): JSX.Element => {
+interface IProps {
+  product: IProduct
+}
+
+const InsHome = ({ product }: IProps): JSX.Element => {
   const loading = false
 
   return (
     <InsIndicator isLoading={loading}>
-      <InsHero />
-      <InsProductDetails />
+      <InsHero product={product} />
+      <InsProductDetails product={product} />
       <InsProductCards
         title="Complete Your Ride"
         items={completeYourRideProducts}

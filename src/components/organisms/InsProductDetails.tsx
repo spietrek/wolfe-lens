@@ -9,6 +9,7 @@ import {
   styled,
   Typography,
 } from '@mui/material'
+import { IProduct } from '@/types/product.type'
 import InsBodyText from '../atoms/InsBodyText'
 import InsHeading from '../atoms/InsHeading'
 
@@ -34,24 +35,21 @@ const StyledAccordionSummary = styled(AccordionSummary)<AccordionSummaryProps>(
   }),
 ) as typeof AccordionSummary
 
-const InsProductDetails = (): JSX.Element => {
+interface IProps {
+  product: IProduct
+}
+
+const InsProductDetails = ({ product }: IProps): JSX.Element => {
   return (
     <Grid container className="my-[80px] mx-0 py-0 px-[12px]">
       <Grid item xs={12} md={6}>
         <div className="mb-6 mr-0 lg:mr-8 lg:mb-0">
           <InsHeading className="text-6xl font-bold uppercase">
-            Climb. Descend. Smile. Repeat.
+            {product.productTitle}
           </InsHeading>
 
           <InsBodyText className="mt-6 text-base">
-            The quiet Quiver Killer strikes again. The Slayer is our 140mm
-            29&ldquo; big-wheeled trail bike featuring a steeper 77° seat angle
-            and the best attributes from both its Following and Wreckoning
-            brothers. Still, the Slayer stands on its own, with an increased
-            reach that benefits both climbing and descending, a fierce DH
-            capability, an Enduro heart, and diabolical cornering powers. Quiet,
-            stiff, fast and poppy-as-hell, the Offering sacrafices nothing but
-            givesn you God-like powers. All hail, the Dark Lord of singletrack.
+            {product.productDescription}
           </InsBodyText>
         </div>
       </Grid>
