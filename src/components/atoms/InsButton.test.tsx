@@ -1,5 +1,4 @@
-import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import InsButton from './InsButton'
 
 test('should render a button with text', () => {
@@ -13,8 +12,13 @@ test('should display a disabled button', () => {
 })
 
 test('should be able to click on a button', async () => {
-  render(<InsButton>Hello World</InsButton>)
+  const onClickMock = jest.fn()
+  render(<InsButton onClick={onClickMock}>Hello World</InsButton>)
   const testButton = screen.getByRole('button', { name: 'Hello World' })
   expect(testButton).toBeEnabled()
-  await userEvent.click(testButton)
+  fireEvent.click(testButton)
+
+  await waitFor(() => {
+    expect(onClickMock).toHaveBeenCalledTimes(1)
+  })
 })
