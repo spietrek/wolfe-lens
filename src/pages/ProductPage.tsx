@@ -18,6 +18,7 @@ const ProductPage = (): JSX.Element => {
   useEffect(() => {
     const productId = params?.productId ?? '0'
     void dispatch(retrieveProduct(productId))
+    window.scrollTo(0, 0)
   }, [dispatch, params.productId])
 
   return <InsProduct loading={isLoading} product={product} />
