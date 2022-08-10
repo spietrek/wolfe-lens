@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
   Accordion,
@@ -39,7 +40,9 @@ interface IProps {
   product: IProduct | null
 }
 
-const InsProductDetails = ({ product = null }: IProps): JSX.Element => {
+const InsProductDetails = ({
+  product = null,
+}: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <Grid container className="my-[80px] mx-0 py-0 px-[12px]">
       <Grid item xs={12} md={6}>
@@ -59,83 +62,33 @@ const InsProductDetails = ({ product = null }: IProps): JSX.Element => {
             Product Info
           </InsHeading>
 
-          <StyledAccordion
-            className="mt-[24px]"
-            disableGutters
-            elevation={0}
-            square
-          >
-            <StyledAccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1-content"
-              id="panel1-header"
-            >
-              <Typography>Geometry</Typography>
-            </StyledAccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </StyledAccordion>
-          <StyledAccordion disableGutters elevation={0} square>
-            <StyledAccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2-content"
-              id="panel2-header"
-            >
-              <Typography>Fit / Sizing</Typography>
-            </StyledAccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </StyledAccordion>
-          <StyledAccordion disableGutters elevation={0} square>
-            <StyledAccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel3-content"
-              id="panel3-header"
-            >
-              <Typography>Specifications</Typography>
-            </StyledAccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </StyledAccordion>
-          <StyledAccordion disableGutters elevation={0} square>
-            <StyledAccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel4-content"
-              id="panel4-header"
-            >
-              <Typography>Faq</Typography>
-            </StyledAccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </StyledAccordion>
+          <div className="mt-6">
+            {product?.productDetails.map(item => (
+              <StyledAccordion
+                key={item.title}
+                disableGutters
+                elevation={0}
+                square
+              >
+                <StyledAccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                >
+                  <Typography>{item.title}</Typography>
+                </StyledAccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse malesuada lacus ex, sit amet blandit leo
+                    lobortis eget. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+                    blandit leo lobortis eget.
+                  </Typography>
+                </AccordionDetails>
+              </StyledAccordion>
+            ))}
+          </div>
         </div>
       </Grid>
     </Grid>

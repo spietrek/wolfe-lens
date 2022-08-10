@@ -31,15 +31,17 @@ const InsCard = ({ children }: PropsWithChildren<IProps>): JSX.Element => {
   )
 }
 
-const Media = (props: IProps): JSX.Element => <div>{props.children}</div>
+const Media = (props: PropsWithChildren<IProps>): JSX.Element => (
+  <div>{props.children}</div>
+)
 InsCard.Media = Media
 
-const Body = (props: IProps): JSX.Element => (
+const Body = (props: PropsWithChildren<IProps>): JSX.Element => (
   <div className="px-6 py-4">{props.children}</div>
 )
 InsCard.Body = Body
 
-const Footer = (props: IProps): JSX.Element => (
+const Footer = (props: PropsWithChildren<IProps>): JSX.Element => (
   <div className="border-t-2 px-6 pt-4 pb-2">{props.children}</div>
 )
 InsCard.Footer = Footer

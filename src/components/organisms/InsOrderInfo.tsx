@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from 'react'
+import { PropsWithChildren, SetStateAction, useState } from 'react'
 import {
   FormControlLabel,
   Radio,
@@ -15,7 +15,7 @@ interface IProps {
   product: IProduct
 }
 
-const InsOrderInfo = ({ product }: IProps): JSX.Element => {
+const InsOrderInfo = ({ product }: PropsWithChildren<IProps>): JSX.Element => {
   const [color, setColor] = useState('')
   const [size, setSize] = useState('')
   const [acquire, setAcquire] = useState('shipIt')
@@ -51,7 +51,7 @@ const InsOrderInfo = ({ product }: IProps): JSX.Element => {
           {product.name}
         </InsHeading>
         <InsHeading className="w-[150px] text-right text-2xl font-bold uppercase">
-          {product.financials.price}
+          {product.price}
         </InsHeading>
       </div>
 

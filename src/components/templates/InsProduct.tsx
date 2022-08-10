@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react'
 import { IProduct } from '@/types/product.type'
 import InsIndicator from '../molecules/InsIndicator'
 import InsHero from '../organisms/InsHero'
@@ -6,25 +7,25 @@ import InsProductDetails from '../organisms/InsProductDetails'
 
 const completeYourRideProducts = [
   {
-    href: '/',
+    href: '/product/10001',
     imgSrc: '/assets/images/product1.png',
     title: 'Cliplite MTB Shoes',
     subtitle: '$140.00',
   },
   {
-    href: '/',
+    href: '/product/10001',
     imgSrc: '/assets/images/product2.png',
     title: 'Mens Platform Bike Shorts',
     subtitle: '$120.00',
   },
   {
-    href: '/',
+    href: '/product/10001',
     imgSrc: '/assets/images/product3.png',
     title: 'POC Tectal Race Helmet',
     subtitle: '$154.00',
   },
   {
-    href: '/',
+    href: '/product/10001',
     imgSrc: '/assets/images/product4.png',
     title: 'Ultra Mtn Merino Socks',
     subtitle: '$28.00',
@@ -66,7 +67,7 @@ interface IProps {
 const InsProduct = ({
   loading = true,
   product = null,
-}: IProps): JSX.Element => {
+}: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <InsIndicator isLoading={loading}>
       <InsHero product={product} />

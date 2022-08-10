@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react'
 import { Grid } from '@mui/material'
 import { IProduct } from '@/types/product.type'
 import InsImage from '../atoms/InsImage'
@@ -7,7 +8,9 @@ interface IProps {
   product: IProduct | null
 }
 
-const InsHero = ({ product = null }: IProps): JSX.Element => {
+const InsHero = ({
+  product = null,
+}: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <>
       {product !== null && (
