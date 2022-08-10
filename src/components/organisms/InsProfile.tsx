@@ -28,7 +28,7 @@ const InsProfile = ({
     <div className={clsx('flex', 'items-center', 'justify-start', className)}>
       <InsAvatar
         variant="circular"
-        src="assets/images/me.jpg"
+        src="/assets/images/me.jpg"
         className="ml-2 h-[24px] w-[24px]"
       />
 

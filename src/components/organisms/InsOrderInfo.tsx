@@ -1,6 +1,5 @@
 import { SetStateAction, useState } from 'react'
 import {
-  Button,
   FormControlLabel,
   Radio,
   RadioGroup,
@@ -8,9 +7,8 @@ import {
 } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { IProduct } from '@/types/product.type'
-import InsColorToggleButton from '../atoms/InsColorToggleButton'
+import InsButton from '../atoms/InsButton'
 import InsHeading from '../atoms/InsHeading'
-import InsToggleButton from '../atoms/InsToggleButton'
 import InsToggleButtonGroup from '../atoms/InsToggleButtonGroup'
 
 interface IProps {
@@ -42,6 +40,10 @@ const InsOrderInfo = ({ product }: IProps): JSX.Element => {
     setAcquire(event.target.value)
   }
 
+  const isValidSubmit = (): boolean => {
+    return color.length > 0 && size.length > 0 && acquire.length > 0
+  }
+
   return (
     <div className="mt-6">
       <div className="flex">
@@ -66,15 +68,29 @@ const InsOrderInfo = ({ product }: IProps): JSX.Element => {
           <InsToggleButtonGroup
             size="large"
             value={color}
+            exclusive
             onChange={handleColorChange}
           >
-            <InsColorToggleButton value="black" key="black" color="#000" />
+            <ToggleButton
+              value="black"
+              key="black"
+              className="h-[42px] w-[42px] !bg-[#000]"
+            />
 
-            <InsColorToggleButton value="red" key="red" color="#ff0000" />
+            <ToggleButton
+              value="red"
+              key="red"
+              className="h-[42px] w-[42px] !bg-[#ff0000]"
+            />
 
-            <InsColorToggleButton value="yellow" key="yellow" color="#f9db24" />
+            <ToggleButton
+              value="yellow"
+              key="yellow"
+              className="h-[42px] w-[42px] !bg-[#f9db24]"
+            />
           </InsToggleButtonGroup>
         </div>
+
         <div className="ml-4">
           <InsHeading className="mb-2 text-sm uppercase text-gray-400">
             Size
@@ -83,17 +99,30 @@ const InsOrderInfo = ({ product }: IProps): JSX.Element => {
           <InsToggleButtonGroup
             size="large"
             value={size}
+            exclusive
             onChange={handleSizeChange}
           >
-            <InsToggleButton value="small" key="small">
+            <ToggleButton
+              value="small"
+              key="small"
+              className="h-[42px] w-[42px]"
+            >
               S
-            </InsToggleButton>
-            <InsToggleButton value="medium" key="medium">
+            </ToggleButton>
+            <ToggleButton
+              value="medium"
+              key="medium"
+              className="h-[42px] w-[42px]"
+            >
               M
-            </InsToggleButton>
-            <InsToggleButton value="large" key="large">
+            </ToggleButton>
+            <ToggleButton
+              value="large"
+              key="large"
+              className="h-[42px] w-[42px]"
+            >
               L
-            </InsToggleButton>
+            </ToggleButton>
 
             <ToggleButton
               value="extraLarge"
@@ -145,18 +174,16 @@ const InsOrderInfo = ({ product }: IProps): JSX.Element => {
       </div>
 
       <div>
-        <Button
+        <InsButton
           type="submit"
           size="large"
           variant="contained"
           color="primary"
           className="min-w-[250px]"
-          disabled={
-            color.length === 0 || size.length === 0 || acquire.length === 0
-          }
+          disabled={!isValidSubmit()}
         >
           Add to Cart
-        </Button>
+        </InsButton>
       </div>
     </div>
   )

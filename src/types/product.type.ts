@@ -5,15 +5,10 @@ export interface IProductItem {
   subtitle: string
 }
 
-interface IColor {
+export interface IOption {
   id: string
   value: string
-  hex: string
-}
-
-interface ISize {
-  id: string
-  value: string
+  hex?: string
 }
 
 export interface IProduct {
@@ -30,7 +25,7 @@ export interface IProduct {
   heroImage1: string
   heroImage2: string
   heroImage3: string
-  colors: IColor[]
-  sizes: ISize[]
+  colors: IOption[]
+  sizes: IOption[]
   similiarProducts: number[]
 }

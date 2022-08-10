@@ -36,20 +36,20 @@ const StyledAccordionSummary = styled(AccordionSummary)<AccordionSummaryProps>(
 ) as typeof AccordionSummary
 
 interface IProps {
-  product: IProduct
+  product: IProduct | null
 }
 
-const InsProductDetails = ({ product }: IProps): JSX.Element => {
+const InsProductDetails = ({ product = null }: IProps): JSX.Element => {
   return (
     <Grid container className="my-[80px] mx-0 py-0 px-[12px]">
       <Grid item xs={12} md={6}>
         <div className="mb-6 mr-0 lg:mr-8 lg:mb-0">
           <InsHeading className="text-6xl font-bold uppercase">
-            {product.productTitle}
+            {product !== null ? product.productTitle : ''}
           </InsHeading>
 
           <InsBodyText className="mt-6 text-base">
-            {product.productDescription}
+            {product !== null ? product.productDescription : ''}
           </InsBodyText>
         </div>
       </Grid>

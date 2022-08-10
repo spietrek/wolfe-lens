@@ -8,6 +8,7 @@ import ColumnOnePage from '../pages/ColumnOnePage'
 import ColumnThreePage from '../pages/ColumnThreePage'
 
 const HomePage = lazy(() => import('../pages/HomePage'))
+const ProductPage = lazy(() => import('../pages/ProductPage'))
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'))
 const SettingsPage = lazy(() => import('../pages/SettingsPage'))
 const UnauthorizedPage = lazy(() => import('../pages/UnauthorizedPage'))
@@ -20,6 +21,7 @@ const AppRoutes = (): JSX.Element => {
           <Route element={<ColumnOnePage />}>
             {/* Public Routes */}
             <Route path="/" element={<HomePage />} />
+            <Route path="/product/:productId" element={<ProductPage />} />
             <Route path="unauthorized" element={<UnauthorizedPage />} />
             {/* Admin Protected Routes */}
             <Route element={<InsAuth allowedRoles={[UR.Admin]} />}>

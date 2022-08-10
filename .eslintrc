@@ -254,7 +254,15 @@
     "react/no-this-in-sfc": "error",
     "react/no-children-prop": "error",
     "react/jsx-pascal-case": "error",
-    "react/jsx-handler-names": "error",
+    "react/jsx-handler-names": [
+      "error",
+      {
+        "eventHandlerPrefix": "handle",
+        "eventHandlerPropPrefix": "on",
+        "checkLocalVariables": false,
+        "checkInlineFunction": true
+      }
+    ],
     "react/self-closing-comp": [
       "error",
       {
