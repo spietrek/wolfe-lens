@@ -12,5 +12,4 @@ export const base = Template.bind({})
 base.args = {
   src: 'https://v1.tailwindcss.com/img/card-top.jpg',
   alt: 'Hello World',
-  width: '600px',
 }
