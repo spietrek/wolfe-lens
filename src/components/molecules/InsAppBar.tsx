@@ -1,5 +1,7 @@
 import { PropsWithChildren } from 'react'
 import { AppBar, AppBarProps, styled, Toolbar } from '@mui/material'
+import { Colors } from '@/types/color.type'
+import { Positions } from '../../types/position.type'
 
 const StyledAppBar = styled(AppBar)<AppBarProps>(({ theme }) => ({
   backgroundColor: `${theme.palette.background.default}`,
@@ -8,10 +10,10 @@ const StyledAppBar = styled(AppBar)<AppBarProps>(({ theme }) => ({
 })) as typeof AppBar
 
 interface IProps {
-  color?: 'inherit' | 'default' | 'primary' | 'secondary'
+  color?: Colors
   component?: React.ElementType
   elevation?: number
-  position?: 'fixed' | 'absolute' | 'sticky' | 'static' | 'relative'
+  position?: Positions
   children?: React.ReactNode
   style?: React.CSSProperties
 }

@@ -4,6 +4,7 @@ import {
   ButtonAriaPopus,
   ButtonColors,
   ButtonSizes,
+  ButtonTypes,
   ButtonVariants,
 } from '../../types/button.type'
 
@@ -23,7 +24,7 @@ interface IProps {
   startIcon?: React.ReactNode
   style?: React.CSSProperties
   tabIndex?: number | undefined
-  type?: 'button' | 'submit' | 'reset'
+  type?: ButtonTypes
   variant?: ButtonVariants
 }
 

@@ -4,11 +4,11 @@ import {
   VisibilityOutlined,
   WarningOutlined,
 } from '@mui/icons-material'
-import { IconStatusType } from '../../types/iconStatus.type'
+import { IconStatuses } from '../../types/iconStatus.type'
 
 interface IProps {
   style?: React.CSSProperties
-  status?: IconStatusType
+  status?: IconStatuses
 }
 
 const InsStatusIcon = ({

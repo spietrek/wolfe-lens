@@ -1,1 +1,1 @@
-export type IconStatusType = 'inReview' | 'approved' | 'warning'
+export type IconStatuses = 'inReview' | 'approved' | 'warning'

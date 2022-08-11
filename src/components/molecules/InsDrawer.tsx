@@ -1,8 +1,9 @@
 import { PropsWithChildren } from 'react'
 import { Drawer } from '@mui/material'
+import { Anchors } from '@/types/drawer.type'
 
 interface IProps {
-  anchor?: 'left' | 'right'
+  anchor?: Anchors
   open?: boolean
   onClose?: (event: React.KeyboardEvent | React.MouseEvent) => void
   children?: React.ReactNode

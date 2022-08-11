@@ -21,3 +21,5 @@ export type ButtonAriaPopus =
   | 'listbox'
   | 'tree'
   | undefined
+
+export type ButtonTypes = 'button' | 'submit' | 'reset'
