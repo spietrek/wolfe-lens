@@ -4,7 +4,7 @@ import clsx from 'clsx'
 interface IProps {
   src: string
   alt: string
-  height?: string
+  height?: number | string
   className?: string
 }
 
@@ -17,13 +17,15 @@ const InsImage = ({
   return (
     <img
       src={src}
+      srcSet={src}
       height={height}
       alt={alt}
       className={clsx(
-        'block w-full transform transition duration-500',
+        'block transform transition duration-500',
         className,
         className,
       )}
+      loading="lazy"
     />
   )
 }
