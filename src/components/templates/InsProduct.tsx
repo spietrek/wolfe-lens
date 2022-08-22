@@ -1,9 +1,9 @@
 import { PropsWithChildren } from 'react'
 import { IProduct } from '@/types/product.type'
 import InsIndicator from '../molecules/InsIndicator'
-import InsHero from '../organisms/InsHero'
 import InsProductCards from '../organisms/InsProductCards'
 import InsProductDetails from '../organisms/InsProductDetails'
+import InsProductHero from '../organisms/InsProductHero'
 
 const completeYourRideProducts = [
   {
@@ -70,7 +70,7 @@ const InsProduct = ({
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <InsIndicator isLoading={loading}>
-      <InsHero product={product} />
+      <InsProductHero product={product} />
       <InsProductDetails product={product} />
       <InsProductCards
         title="Complete Your Ride"
