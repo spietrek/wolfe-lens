@@ -2,9 +2,11 @@ const path = require('path')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  corePlugins: {
+    preflight: false,
+  },
   content: [path.join(__dirname, './src/**/*.(js|jsx|ts|tsx)')],
-  // important: true,
-  // important: '#root',
+  important: '#root',
   darkMode: 'class',
   theme: {
     extend: {},

@@ -4,6 +4,10 @@
 
 /* custom base styles */
 @layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 /* custom components styles */

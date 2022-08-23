@@ -1,4 +1,5 @@
 import { PropsWithChildren } from 'react'
+import clsx from 'clsx'
 import { Headings } from '@/types/heading.type'
 
 interface IProps {
@@ -14,7 +15,7 @@ const InsHeading = ({
 }: PropsWithChildren<IProps>): JSX.Element => {
   const Heading = level
 
-  return <Heading className={className}>{children}</Heading>
+  return <Heading className={clsx('m-0', className)}>{children}</Heading>
 }
 
 export default InsHeading
