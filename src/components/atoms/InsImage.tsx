@@ -21,7 +21,7 @@ const InsImage = ({
       height={height}
       alt={alt}
       className={clsx(
-        'block transform transition duration-500',
+        'block w-full transform transition duration-500',
         className,
         className,
       )}

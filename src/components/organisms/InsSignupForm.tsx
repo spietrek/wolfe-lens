@@ -17,15 +17,15 @@ const InsSignupForm = (): JSX.Element => {
   }
 
   return (
-    <div className="lg:p0 mt-[80px] xs:px-4 lg:h-full">
-      <div className="lg:relative">
+    <div className="md:p0 xs:px-4 mt-[150px] md:h-full">
+      <div className="md:relative">
         <InsImage
           src="/assets/images/mtb-signup-form.png"
           alt="Signup Form"
           className="lg:relative lg:w-2/3"
         />
 
-        <div className="lg:absolute lg:top-1/2 lg:bottom-0 lg:right-0 lg:z-10 lg:h-[280px] lg:w-2/3 lg:translate-y-[-50%] lg:translate-x-0 lg:transform">
+        <div className="md:absolute md:top-1/2 md:bottom-0 md:right-0 md:z-10 md:h-[280px] md:w-2/3 md:translate-y-[-50%] md:translate-x-0 md:transform">
           <div className="bg-white p-6 dark:bg-black">
             <InsHeading className="text-3xl font-bold uppercase">
               Sign up for the Wolfe Up

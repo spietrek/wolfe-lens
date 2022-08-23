@@ -15,7 +15,7 @@ const InsProductCards = ({
   items = [],
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
-    <div className="mt-[120px] max-w-full">
+    <div className="mt-[150px] max-w-full">
       <InsHeading className="mb-6 text-center text-3xl font-bold uppercase">
         {title}
       </InsHeading>

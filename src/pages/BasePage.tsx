@@ -37,7 +37,7 @@ const BasePage = (): JSX.Element => {
   return (
     <StyledContainer maxWidth="lg">
       <InsHeader darkMode={darkMode} onToggleDarkMode={handleToggleDarkMode} />
-      <div className="px-[12px]">
+      <div className="px-4">
         <Outlet />
       </div>
       <InsSignupForm />
