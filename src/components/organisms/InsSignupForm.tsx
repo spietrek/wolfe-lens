@@ -1,5 +1,12 @@
 import { useState } from 'react'
-import { Button, Checkbox, FormControlLabel, TextField } from '@mui/material'
+import {
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Grid,
+  TextField,
+} from '@mui/material'
+import { useDarkMode } from '../../providers/withThemeProvider'
 import InsBodyText from '../atoms/InsBodyText'
 import InsHeading from '../atoms/InsHeading'
 import InsImage from '../atoms/InsImage'
@@ -8,6 +15,8 @@ const InsSignupForm = (): JSX.Element => {
   const [email, setEmail] = useState('')
   const [firstName, setFirstName] = useState('')
   const [approve, setApprove] = useState(false)
+  const { darkMode } = useDarkMode()
+  const formBg = darkMode ? '#000' : '#fff'
 
   const handleSubmit = (): void => {
     console.log(email, firstName, approve)
@@ -17,7 +26,7 @@ const InsSignupForm = (): JSX.Element => {
   }
 
   return (
-    <div className="md:p0 xs:px-4 mt-[150px] md:h-full">
+    <div className="md:p0 mt-[150px] sm:px-4 md:h-full">
       <div className="md:relative">
         <InsImage
           src="/assets/images/mtb-signup-form.png"
@@ -25,8 +34,8 @@ const InsSignupForm = (): JSX.Element => {
           className="lg:relative lg:w-2/3"
         />
 
-        <div className="md:absolute md:top-1/2 md:bottom-0 md:right-0 md:z-10 md:h-[280px] md:w-2/3 md:translate-y-[-50%] md:translate-x-0 md:transform">
-          <div className="bg-white p-6 dark:bg-black">
+        <div className="md:absolute md:top-1/2 md:bottom-0 md:right-0 md:z-10 md:h-[310px] md:w-2/3 md:translate-y-[-50%] md:translate-x-0 md:transform">
+          <div style={{ backgroundColor: formBg }} className="p-6">
             <InsHeading className="text-3xl font-bold uppercase">
               Sign up for the Wolfe Up
             </InsHeading>
@@ -35,8 +44,23 @@ const InsSignupForm = (): JSX.Element => {
             </InsHeading>
 
             <form>
-              <div className="mt-4 mb-2 flex">
-                <div className="mr-2 flex-1">
+              <Grid className="mt-1" container spacing={2}>
+                <Grid item xs={4}>
+                  <TextField
+                    id="firstName"
+                    name="firstName"
+                    value={firstName}
+                    required
+                    fullWidth
+                    label="First Name"
+                    autoComplete="off"
+                    size="small"
+                    variant="outlined"
+                    color="primary"
+                    onChange={e => setFirstName(e.target.value)}
+                  />
+                </Grid>
+                <Grid item xs={4}>
                   <TextField
                     id="email"
                     name="email"
@@ -51,23 +75,8 @@ const InsSignupForm = (): JSX.Element => {
                     color="primary"
                     onChange={e => setEmail(e.target.value)}
                   />
-                </div>
-                <div className="mr-2 flex-1">
-                  <TextField
-                    id="firstName"
-                    name="firstName"
-                    value={firstName}
-                    required
-                    fullWidth
-                    label="First Name"
-                    autoComplete="off"
-                    size="small"
-                    variant="outlined"
-                    color="primary"
-                    onChange={e => setFirstName(e.target.value)}
-                  />
-                </div>
-                <div className="ml-2 flex-1">
+                </Grid>
+                <Grid item xs={4}>
                   <Button
                     type="submit"
                     size="medium"
@@ -81,8 +90,9 @@ const InsSignupForm = (): JSX.Element => {
                   >
                     Sign Me Up
                   </Button>
-                </div>
-              </div>
+                </Grid>
+              </Grid>
+
               <FormControlLabel
                 control={
                   <Checkbox
