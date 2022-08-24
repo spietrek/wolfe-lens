@@ -6,6 +6,7 @@ import InsTextOverlay from '../molecules/InsTextOverlay'
 const InsHero = (): JSX.Element => {
   return (
     <InsTextOverlay
+      offset="large"
       renderText={() => (
         <>
           <InsHeading className="text-3xl font-bold uppercase">

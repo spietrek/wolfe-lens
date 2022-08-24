@@ -6,6 +6,7 @@ interface IProps {
   alt: string
   height?: number | string
   className?: string
+  style?: React.CSSProperties
 }
 
 const InsImage = ({
@@ -13,6 +14,7 @@ const InsImage = ({
   alt,
   height = 'auto',
   className,
+  style,
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <img
@@ -25,6 +27,7 @@ const InsImage = ({
         className,
         className,
       )}
+      style={style}
       loading="lazy"
     />
   )

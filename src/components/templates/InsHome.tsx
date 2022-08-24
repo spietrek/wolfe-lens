@@ -1,8 +1,9 @@
+import { ICategoryItem } from '../../types/category.type'
 import { ICommunityItem } from '../../types/community.type'
 import InsIndicator from '../molecules/InsIndicator'
+import InsCategories from '../organisms/InsCategories'
 import InsCommunity from '../organisms/InsCommunity'
 import InsHero from '../organisms/InsHero'
-import InsNavImages from '../organisms/InsNavImages'
 import InsProductCards from '../organisms/InsProductCards'
 
 const featuredroducts = [
@@ -73,6 +74,27 @@ const communityImages: ICommunityItem[] = [
   },
 ]
 
+const categories: ICategoryItem[] = [
+  {
+    altText: 'Bikes',
+    imageUrl: '/assets/images/bikes.png',
+    title: 'Bikes',
+    buttonText: 'Shop Now',
+  },
+  {
+    altText: 'Gear',
+    imageUrl: '/assets/images/gear.png',
+    title: 'Gear',
+    buttonText: 'Shop Now',
+  },
+  {
+    altText: 'Parts',
+    imageUrl: '/assets/images/parts.png',
+    title: 'Parts',
+    buttonText: 'Shop Now',
+  },
+]
+
 const InsHome = (): JSX.Element => {
   const loading = false
 
@@ -80,7 +102,7 @@ const InsHome = (): JSX.Element => {
     <InsIndicator isLoading={loading}>
       <InsHero />
       <InsProductCards title="Featured Bikes" items={featuredroducts} />
-      <InsNavImages />
+      <InsCategories items={categories} />
       <InsCommunity images={communityImages} />
     </InsIndicator>
   )

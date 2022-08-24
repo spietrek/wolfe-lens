@@ -9,7 +9,7 @@ interface IProps {
 
 const InsCommunity = ({ images }: PropsWithChildren<IProps>): JSX.Element => {
   return (
-    <div className="mt-[150px] max-w-full">
+    <div className="mt-[80px] max-w-full">
       <InsHeading className="mb-6 text-center text-3xl font-bold uppercase">
         Our Community
       </InsHeading>

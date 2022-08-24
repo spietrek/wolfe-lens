@@ -6,7 +6,7 @@ import InsFooterItem from '../molecules/InsFooterItem'
 import InsLogo from '../molecules/InsLogo'
 
 const styles: { [key: string]: React.CSSProperties } = {
-  appBar: { marginTop: '150px' },
+  appBar: { marginTop: '80px' },
 }
 
 const footerItems: IFooterItem[] = [

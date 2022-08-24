@@ -15,7 +15,7 @@ const InsProductCards = ({
   items = [],
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
-    <div className="mt-[150px] max-w-full">
+    <div className="mt-[80px] max-w-full">
       <InsHeading className="mb-6 text-center text-3xl font-bold uppercase">
         {title}
       </InsHeading>
@@ -31,12 +31,12 @@ const InsProductCards = ({
                     src={item.imgSrc}
                     alt="product1"
                   />
-                  <div>
+                  <>
                     <InsHeading className="mt-1 text-base font-bold uppercase">
                       {item.title}
                     </InsHeading>
                     <InsHeading className="text-sm">{item.subtitle}</InsHeading>
-                  </div>
+                  </>
                 </Link>
               </CardContent>
             </Card>

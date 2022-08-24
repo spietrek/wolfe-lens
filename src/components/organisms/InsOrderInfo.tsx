@@ -50,7 +50,7 @@ const InsOrderInfo = ({ product }: PropsWithChildren<IProps>): JSX.Element => {
         <InsHeading className="flex-1 text-2xl font-bold uppercase">
           {product.name}
         </InsHeading>
-        <InsHeading className="w-[150px] text-right text-2xl font-bold uppercase">
+        <InsHeading className="w-[80px] text-right text-2xl font-bold uppercase">
           {product.formattedPrice}
         </InsHeading>
       </div>
