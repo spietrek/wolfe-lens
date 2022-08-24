@@ -1,9 +1,14 @@
+import { PropsWithChildren } from 'react'
+
 interface IProps {
   renderText: () => JSX.Element
   children: React.ReactNode
 }
 
-const InsTextOverlay = ({ renderText, children }: IProps): JSX.Element => {
+const InsTextOverlay = ({
+  renderText,
+  children,
+}: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <div className="relative">
       {children}
