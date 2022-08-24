@@ -60,7 +60,7 @@ const InsFooter = (): JSX.Element => {
       component="footer"
       style={styles.appBar}
     >
-      <div className="w-full bg-slate-300 p-6 text-center dark:bg-black">
+      <div className="w-full bg-black p-6 text-center text-white">
         <InsLogo />
         <Grid container spacing={3} className="mt-[4px]">
           <Grid item xs={12} md={colCount}>

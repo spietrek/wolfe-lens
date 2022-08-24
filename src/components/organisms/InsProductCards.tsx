@@ -30,8 +30,10 @@ const InsProductCards = ({
                 alt="product1"
               />
               <div>
-                <InsHeading className="mt-1 uppercase">{item.title}</InsHeading>
-                <InsHeading>{item.subtitle}</InsHeading>
+                <InsHeading className="mt-1 text-base font-bold uppercase">
+                  {item.title}
+                </InsHeading>
+                <InsHeading className="text-sm">{item.subtitle}</InsHeading>
               </div>
             </Link>
           </CardContent>
