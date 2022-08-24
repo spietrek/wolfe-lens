@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react'
-import { CardContent } from '@mui/material'
+import { Card, CardContent } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { IProductItem } from '../../types/product.type'
 import InsHeading from '../atoms/InsHeading'
@@ -20,24 +20,28 @@ const InsProductCards = ({
         {title}
       </InsHeading>
 
-      <div className="flex overflow-x-auto">
-        {items.map((item, index) => (
-          <CardContent key={index} className="flex-initial">
-            <Link to={item.href}>
-              <InsImage
-                className="min-w-[262px]"
-                src={item.imgSrc}
-                alt="product1"
-              />
-              <div>
-                <InsHeading className="mt-1 text-base font-bold uppercase">
-                  {item.title}
-                </InsHeading>
-                <InsHeading className="text-sm">{item.subtitle}</InsHeading>
-              </div>
-            </Link>
-          </CardContent>
-        ))}
+      <div className="overflow-x-auto">
+        <div className="flex w-[992px]">
+          {items.map((item, index) => (
+            <Card className="flex-initial" key={index}>
+              <CardContent>
+                <Link to={item.href}>
+                  <InsImage
+                    className="min-w-[262px]"
+                    src={item.imgSrc}
+                    alt="product1"
+                  />
+                  <div>
+                    <InsHeading className="mt-1 text-base font-bold uppercase">
+                      {item.title}
+                    </InsHeading>
+                    <InsHeading className="text-sm">{item.subtitle}</InsHeading>
+                  </div>
+                </Link>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </div>
   )
