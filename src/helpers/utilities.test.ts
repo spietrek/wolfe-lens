@@ -20,6 +20,6 @@ test('should display number with 2 decimals', () => {
   expect(formatNumber(1234.56)).toBe('1234.56')
 })
 
-test('should display number with 2 decimals', () => {
-  expect(formatNumber(1234.5678)).toBe('1234.57')
+test('should display number with 3 decimals', () => {
+  expect(formatNumber(1234.5678)).toBe('1234.568')
 })
