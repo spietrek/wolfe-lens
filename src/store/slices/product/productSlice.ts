@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { IProduct } from '@/types/product.type'
-import { timeout } from '../../../helpers'
+import { formatCurrency, timeout } from '../../../helpers'
 import ProductDataService from '../../../services/product.service'
 
 interface ProductState {
@@ -12,7 +12,7 @@ interface ProductState {
 export const retrieveProduct = createAsyncThunk(
   'product/retrieve',
   async (productId: string) => {
-    await timeout(1500)
+    await timeout(500)
     const res = await ProductDataService.getProduct(productId)
     return res.data
   },
@@ -44,6 +44,11 @@ export const productSlice = createSlice({
     })
 
     builder.addCase(retrieveProduct.fulfilled, (state, action) => {
+      const product = action?.payload ?? null
+      if (product !== null) {
+        const formattedPrice = formatCurrency(product?.price ?? 0)
+        product.formattedPrice = formattedPrice
+      }
       state.product = action.payload
       state.isLoading = false
     })

@@ -20,6 +20,7 @@ export interface IProduct {
   name: string
   subtitle: string
   price: number
+  formattedPrice: string
   recurrence: number
   autoRenewPrice?: number
   productTitle: string
