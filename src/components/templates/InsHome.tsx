@@ -7,25 +7,25 @@ import InsProductCards from '../organisms/InsProductCards'
 
 const featuredroducts = [
   {
-    href: '/product/1002',
+    href: '/bike/1002',
     imgSrc: '/assets/images/bike1.png',
     title: 'Bike Name',
     subtitle: '26" Dirt Jumper',
   },
   {
-    href: '/product/1003',
+    href: '/bike/1003',
     imgSrc: '/assets/images/bike2.png',
     title: 'Bike Name',
     subtitle: '29" 120MM',
   },
   {
-    href: '/product/1004',
+    href: '/bike/1004',
     imgSrc: '/assets/images/bike3.png',
     title: 'Bike Name',
     subtitle: '27.5" 168MM',
   },
   {
-    href: '/product/1005',
+    href: '/bike/1005',
     imgSrc: '/assets/images/bike4.png',
     title: 'Bike Name',
     subtitle: '29" 168MM',

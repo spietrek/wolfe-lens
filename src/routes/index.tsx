@@ -21,7 +21,9 @@ const AppRoutes = (): JSX.Element => {
           <Route element={<ColumnOnePage />}>
             {/* Public Routes */}
             <Route path="/" element={<HomePage />} />
-            <Route path="/product/:productId" element={<ProductPage />} />
+            <Route path="/bike/:productId" element={<ProductPage />} />
+            <Route path="/gear/:productId" element={<ProductPage />} />
+            <Route path="/part/:productId" element={<ProductPage />} />
             <Route path="unauthorized" element={<UnauthorizedPage />} />
             {/* Admin Protected Routes */}
             <Route element={<InsAuth allowedRoles={[UR.Admin]} />}>
