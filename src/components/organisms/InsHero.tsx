@@ -24,7 +24,7 @@ const InsHero = (): JSX.Element => {
         </>
       )}
     >
-      <InsImage src="/assets/images/hero.png" alt="Mountain Bike" />
+      <InsImage src="/assets/images/hero.webp" alt="Mountain Bike" />
     </InsTextOverlay>
   )
 }

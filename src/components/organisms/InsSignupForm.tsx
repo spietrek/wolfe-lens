@@ -29,7 +29,7 @@ const InsSignupForm = (): JSX.Element => {
     <div className="md:p0 mt-[80px] sm:px-4 md:h-full">
       <div className="md:relative">
         <InsImage
-          src="/assets/images/mtb-signup-form.png"
+          src="/assets/images/mtb-signup-form.webp"
           alt="Signup Form"
           className="lg:relative lg:w-2/3"
         />
