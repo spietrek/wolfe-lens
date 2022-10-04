@@ -5,17 +5,15 @@ import InsIconButton from '../atoms/InsIconButton'
 
 interface IProps {
   darkMode: boolean
-  style?: React.CSSProperties
   onToggle: () => void
 }
 
 const InsDarkModeToggle = ({
   darkMode,
-  style,
   onToggle,
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
-    <InsIconButton onClick={onToggle} style={style}>
+    <InsIconButton onClick={onToggle}>
       {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
     </InsIconButton>
   )

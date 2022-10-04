@@ -1,10 +1,14 @@
-import InsHeading from '../atoms/InsHeading'
+import { PropsWithChildren } from 'react'
 
-const InsLogo = (): JSX.Element => {
+interface IProps {
+  companyTitle: string
+}
+
+const InsLogo = ({ companyTitle }: PropsWithChildren<IProps>): JSX.Element => {
   return (
-    <InsHeading className="mt-[-10px] font-['Permanent_Marker'] text-[32px] italic">
-      wolfe
-    </InsHeading>
+    <span className="mt-[-10px] block font-['Permanent_Marker'] text-[32px] italic">
+      {companyTitle}
+    </span>
   )
 }
 

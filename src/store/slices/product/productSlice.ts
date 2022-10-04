@@ -1,20 +1,33 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { IProduct } from '@/types/product.type'
 import { formatCurrency, timeout } from '../../../helpers'
 import ProductDataService from '../../../services/product.service'
+import { IProduct, IProductItem } from '../../../types/product.type'
 
 interface ProductState {
   isError: boolean
   isLoading: boolean
   product: IProduct | null
+  similarProducts: IProductItem[]
+  gear: IProductItem[]
 }
 
 export const retrieveProduct = createAsyncThunk(
   'product/retrieve',
   async (productId: string) => {
     await timeout(500)
-    const res = await ProductDataService.getProduct(productId)
-    return res.data
+    const res = await Promise.all([
+      ProductDataService.getProduct(productId),
+      ProductDataService.getSimilar(productId, 'Bikes'),
+      ProductDataService.getGear(productId, 'Parts'),
+    ])
+
+    const productData = {
+      product: res[0].data as unknown as IProduct,
+      similarProducts: res[1].data as unknown as IProductItem[],
+      gear: res[2].data as unknown as IProductItem[],
+    }
+
+    return productData
   },
 )
 
@@ -22,6 +35,8 @@ const initialState = {
   isError: false,
   isLoading: false,
   product: null,
+  similarProducts: [],
+  gear: [],
 } as ProductState
 
 export const productSlice = createSlice({
@@ -34,6 +49,8 @@ export const productSlice = createSlice({
       state.isError = false
       state.isLoading = false
       state.product = null
+      state.similarProducts = []
+      state.gear = []
     },
   },
 
@@ -44,12 +61,18 @@ export const productSlice = createSlice({
     })
 
     builder.addCase(retrieveProduct.fulfilled, (state, action) => {
-      const product = action?.payload ?? null
+      const product = action?.payload?.product ?? null
       if (product !== null) {
         const formattedPrice = formatCurrency(product?.price ?? 0)
         product.formattedPrice = formattedPrice
+        const formattedAutoRenewPrice = formatCurrency(
+          product?.autoRenewPrice ?? 0,
+        )
+        product.formattedAutoRenewPrice = formattedAutoRenewPrice
       }
-      state.product = action.payload
+      state.product = product
+      state.similarProducts = action?.payload?.similarProducts ?? []
+      state.gear = action?.payload?.gear ?? []
       state.isLoading = false
     })
 

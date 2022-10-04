@@ -1,23 +1,26 @@
 import { PropsWithChildren } from 'react'
 import { Link } from 'react-router-dom'
-import { IFooterItem } from '@/types/footer.type'
-import InsHeading from '../atoms/InsHeading'
+import { IFooterNav } from '../../types/footer.type'
+import InsTypography from '../atoms/InsTypography'
 
 interface IProps {
-  item: IFooterItem
+  item: IFooterNav
 }
 
 const InsFooterItem = ({ item }: PropsWithChildren<IProps>): JSX.Element => {
-  const label = item.label
+  const title = item.title
   const links = item.links ?? []
 
   return (
     <>
-      <InsHeading className="mb-3 text-sm uppercase">{label}</InsHeading>
+      <InsTypography level="h6" bold uppercase>
+        <span className="text-sm">{title}</span>
+      </InsTypography>
+      <div className="mb-4" />
       {links.map((link, index) => (
-        <div key={index} className="mb-1 text-sm">
-          <Link to={link.href}>{link.label}</Link>
-        </div>
+        <InsTypography key={index} level="body2">
+          <Link to={link.link}>{link.label}</Link>
+        </InsTypography>
       ))}
     </>
   )

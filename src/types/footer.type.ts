@@ -1,10 +1,9 @@
-interface IFooterLinkItem {
-  label: string
-  href: string
-}
+import { ILinkWithLabel } from './link.type'
+import { ISortOrder } from './sortOrder.type'
 
-export interface IFooterItem {
-  label: string
-  items?: string[]
-  links?: IFooterLinkItem[]
+interface IFooterNavLink extends ILinkWithLabel, ISortOrder {}
+
+export interface IFooterNav extends ISortOrder {
+  title: string
+  links: IFooterNavLink[]
 }

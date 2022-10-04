@@ -1,30 +1,38 @@
+import { PropsWithChildren } from 'react'
+import { IHeroWithButton } from '../../types/hero.type'
 import InsButton from '../atoms/InsButton'
-import InsHeading from '../atoms/InsHeading'
 import InsImage from '../atoms/InsImage'
+import InsTypography from '../atoms/InsTypography'
 import InsTextOverlay from '../molecules/InsTextOverlay'
 
-const InsHero = (): JSX.Element => {
+interface IProps {
+  hero: IHeroWithButton | null
+}
+
+const InsHero = ({ hero }: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <InsTextOverlay
       offset="large"
       renderText={() => (
         <>
-          <InsHeading className="text-3xl font-bold uppercase">
-            Summer Sale
-          </InsHeading>
-          <InsHeading className="text-xl">10% Off All Gear</InsHeading>
+          <InsTypography className="text-white" level="h1" bold uppercase>
+            {hero?.title}
+          </InsTypography>
+          <InsTypography className="text-white" level="h3">
+            {hero?.subtitle}
+          </InsTypography>
           <InsButton
             size="large"
             variant="contained"
             color="primary"
             className="mt-6"
           >
-            Start Shopping
+            {hero?.label}
           </InsButton>
         </>
       )}
     >
-      <InsImage src="/assets/images/hero.webp" alt="Mountain Bike" />
+      <InsImage src={hero?.image ?? ''} alt={hero?.altText ?? ''} />
     </InsTextOverlay>
   )
 }

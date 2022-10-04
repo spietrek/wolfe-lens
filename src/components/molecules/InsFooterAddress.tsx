@@ -1,15 +1,17 @@
-import InsBodyText from '../atoms/InsBodyText'
-import InsHeading from '../atoms/InsHeading'
+import InsTypography from '../atoms/InsTypography'
 
 const InsFooterAddress = (): JSX.Element => {
   return (
     <>
-      <InsHeading className="mb-3 text-sm uppercase">Global HQ</InsHeading>
-      <InsBodyText className="mb-1 text-sm">456 Jefferson Ave.</InsBodyText>
-      <InsBodyText className="mb-1 text-sm">Louisville, KY</InsBodyText>
-      <InsBodyText className="mb-4 text-sm">40202</InsBodyText>
-      <InsBodyText className="mb-1 text-sm">Phone: 888.696.4324</InsBodyText>
-      <InsBodyText className="mb-1 text-sm">info@wolfe-bikes.com</InsBodyText>
+      <InsTypography level="h6" bold uppercase>
+        <span className="text-sm">Global HQ</span>
+      </InsTypography>
+      <div className="mb-4" />
+      <InsTypography level="body2">456 Jefferson Ave.</InsTypography>
+      <InsTypography level="body2">Louisville, KY</InsTypography>
+      <InsTypography level="body2">40202</InsTypography>
+      <InsTypography level="body2">Phone: 888.696.4324</InsTypography>
+      <InsTypography level="body2">info@wolfe-bikes.com</InsTypography>
     </>
   )
 }

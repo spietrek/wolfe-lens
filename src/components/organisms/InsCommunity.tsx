@@ -1,18 +1,18 @@
 import { PropsWithChildren } from 'react'
-import { ICommunityItem } from '../../types/community.type'
-import InsHeading from '../atoms/InsHeading'
+import { ICommunity } from '../../types/community.type'
+import InsTypography from '../atoms/InsTypography'
 import InsImageList from '../molecules/InsImageList'
 
 interface IProps {
-  images: ICommunityItem[]
+  images: ICommunity[]
 }
 
 const InsCommunity = ({ images }: PropsWithChildren<IProps>): JSX.Element => {
   return (
-    <div className="mt-[80px] max-w-full">
-      <InsHeading className="mb-6 text-center text-3xl font-bold uppercase">
+    <div className="max-w-full">
+      <InsTypography align="center" level="h3" uppercase bold>
         Our Community
-      </InsHeading>
+      </InsTypography>
       <InsImageList images={images} />
     </div>
   )

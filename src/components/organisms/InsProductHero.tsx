@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
 import { Grid } from '@mui/material'
-import { IProduct } from '@/types/product.type'
+import { IProduct } from '../../types/product.type'
 import InsImage from '../atoms/InsImage'
 import InsOrderInfo from './InsOrderInfo'
 

@@ -1,9 +1,8 @@
 import { PropsWithChildren } from 'react'
-import { Card, CardContent } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { IProductItem } from '../../types/product.type'
-import InsHeading from '../atoms/InsHeading'
 import InsImage from '../atoms/InsImage'
+import InsTypography from '../atoms/InsTypography'
 
 interface IProps {
   title: string
@@ -15,31 +14,36 @@ const InsProductCards = ({
   items = [],
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
-    <div className="mt-[80px] max-w-full">
-      <InsHeading className="mb-6 text-center text-3xl font-bold uppercase">
+    <div className="max-w-full">
+      <InsTypography align="center" level="h3" bold uppercase>
         {title}
-      </InsHeading>
+      </InsTypography>
+
+      <div className="mb-6" />
 
       <div className="overflow-x-auto">
-        <div className="flex w-[992px]">
+        <div className="flex">
           {items.map((item, index) => (
-            <Card className="flex-initial" key={index}>
-              <CardContent>
-                <Link to={item.href}>
-                  <InsImage
-                    className="min-w-[262px]"
-                    src={item.imgSrc}
-                    alt="product1"
-                  />
+            <div className="mr-4" key={index}>
+              <div className="w-[280px]">
+                <Link to={item.link} className="w-full">
+                  <div className="mb-2">
+                    <InsImage
+                      src={item.image}
+                      height={215}
+                      alt={item.altText}
+                    />
+                  </div>
                   <>
-                    <InsHeading className="mt-1 text-base font-bold uppercase">
+                    <InsTypography level="body1" bold uppercase>
                       {item.title}
-                    </InsHeading>
-                    <InsHeading className="text-sm">{item.subtitle}</InsHeading>
+                    </InsTypography>
+                    <InsTypography level="body2">{item.subtitle}</InsTypography>
                   </>
                 </Link>
-              </CardContent>
-            </Card>
+                <div className="mb-4" />
+              </div>
+            </div>
           ))}
         </div>
       </div>

@@ -14,7 +14,6 @@ interface IProps {
   color?: ButtonColors
   disabled?: boolean
   size?: ButtonSizes
-  style?: React.CSSProperties
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
@@ -27,7 +26,6 @@ const InsIconButton = ({
   disabled = false,
   onClick,
   size = 'medium',
-  style = {},
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <IconButton
@@ -38,7 +36,6 @@ const InsIconButton = ({
       disabled={disabled}
       onClick={onClick}
       size={size}
-      style={style}
     >
       {children}
     </IconButton>

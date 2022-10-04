@@ -1,5 +1,4 @@
 const path = require('path')
-const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   corePlugins: {

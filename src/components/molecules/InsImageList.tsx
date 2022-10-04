@@ -1,9 +1,9 @@
 import { PropsWithChildren } from 'react'
 import { ImageList, ImageListItem, useMediaQuery } from '@mui/material'
-import { ICommunityItem } from '../../types/community.type'
+import { ICommunity } from '../../types/community.type'
 
 interface IProps {
-  images: ICommunityItem[]
+  images: ICommunity[]
 }
 
 const InsImageList = ({ images }: PropsWithChildren<IProps>): JSX.Element => {
@@ -15,8 +15,8 @@ const InsImageList = ({ images }: PropsWithChildren<IProps>): JSX.Element => {
       {images.map((item, index) => (
         <ImageListItem key={index}>
           <img
-            src={item.src}
-            srcSet={item.src}
+            src={item.image}
+            srcSet={item.image}
             alt={item.altText}
             loading="lazy"
           />

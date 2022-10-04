@@ -1,11 +1,10 @@
 import { Outlet } from 'react-router'
-import InsContentBlock from '../components/atoms/InsContentBlock'
 
 const ColumnOnePage = (): JSX.Element => {
   return (
-    <InsContentBlock>
+    <div className="w-full">
       <Outlet />
-    </InsContentBlock>
+    </div>
   )
 }
 

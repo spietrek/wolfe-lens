@@ -1,13 +1,13 @@
 import { PropsWithChildren } from 'react'
 import { Grid } from '@mui/material'
-import { ICategoryItem } from '../../types/category.type'
+import { ICategory } from '../../types/category.type'
 import InsButton from '../atoms/InsButton'
-import InsHeading from '../atoms/InsHeading'
 import InsImage from '../atoms/InsImage'
+import InsTypography from '../atoms/InsTypography'
 import InsTextOverlay from '../molecules/InsTextOverlay'
 
 interface IProps {
-  items: ICategoryItem[]
+  items: ICategory[]
 }
 
 const InsCategories = ({ items }: PropsWithChildren<IProps>): JSX.Element => {
@@ -18,8 +18,8 @@ const InsCategories = ({ items }: PropsWithChildren<IProps>): JSX.Element => {
   }
 
   return (
-    <Grid container className="mx-0 mt-[80px]">
-      {items.map((item: ICategoryItem, index) => (
+    <Grid container className="mx-0">
+      {items.map((item: ICategory, index) => (
         <Grid
           key={item.title}
           item
@@ -30,21 +30,22 @@ const InsCategories = ({ items }: PropsWithChildren<IProps>): JSX.Element => {
           <InsTextOverlay
             renderText={() => (
               <>
-                <InsHeading className="text-3xl font-bold uppercase">
+                <InsTypography className="text-white" level="h3" uppercase bold>
                   {item.title}
-                </InsHeading>
-                <InsButton size="medium" variant="outlined" className="mt-6">
-                  {item.buttonText}
+                </InsTypography>
+                <InsButton
+                  size="medium"
+                  variant="outlined"
+                  className="mt-3 text-white"
+                >
+                  {item.label}
                 </InsButton>
               </>
             )}
           >
-            <InsImage
-              className="pr-0 sm:pr-[12px]"
-              height={370}
-              src={item.imageUrl}
-              alt={item.altText}
-            />
+            <div className="pr-0 sm:pr-[12px]">
+              <InsImage height={370} src={item.image} alt={item.altText} />
+            </div>
           </InsTextOverlay>
         </Grid>
       ))}

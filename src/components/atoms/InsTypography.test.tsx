@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react'
-import InsHeading from './InsHeading'
+import InsTypography from './InsTypography'
 
 test('Show App Component', () => {
-  render(<InsHeading>Hello World</InsHeading>)
+  render(<InsTypography>Hello World</InsTypography>)
   expect(screen.getByText('Hello World')).toBeInTheDocument()
 })
 

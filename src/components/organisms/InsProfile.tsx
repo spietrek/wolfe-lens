@@ -1,18 +1,12 @@
-import { PropsWithChildren, useState } from 'react'
+import { useState } from 'react'
 import { KeyboardArrowDown } from '@mui/icons-material'
 import { Menu, MenuItem } from '@mui/material'
 import clsx from 'clsx'
 import InsAvatar from '../atoms/InsAvatar'
-import InsBodyText from '../atoms/InsBodyText'
 import InsButton from '../atoms/InsButton'
+import InsTypography from '../atoms/InsTypography'
 
-interface IProps {
-  className?: string
-}
-
-const InsProfile = ({
-  className = '',
-}: PropsWithChildren<IProps>): JSX.Element => {
+const InsProfile = (): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
 
@@ -25,12 +19,10 @@ const InsProfile = ({
   }
 
   return (
-    <div className={clsx('flex', 'items-center', 'justify-start', className)}>
-      <InsAvatar
-        variant="circular"
-        src="/assets/images/me.webp"
-        className="ml-2 h-[24px] w-[24px]"
-      />
+    <div className={clsx('flex', 'items-center', 'justify-start')}>
+      <div className="ml-2 h-[30px] w-[30px]">
+        <InsAvatar variant="circular" src="/assets/images/me.webp" />
+      </div>
 
       <InsButton
         ariaControls={open ? 'basic-menu' : undefined}
@@ -39,9 +31,9 @@ const InsProfile = ({
         onClick={handleClick}
         endIcon={<KeyboardArrowDown />}
       >
-        <InsBodyText className="pt1 font-bold" inline>
+        <InsTypography level="body2" bold>
           Steve Pietrek
-        </InsBodyText>
+        </InsTypography>
       </InsButton>
 
       <Menu

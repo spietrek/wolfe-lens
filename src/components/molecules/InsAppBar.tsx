@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
 import { AppBar, AppBarProps, styled, Toolbar } from '@mui/material'
-import { Colors } from '@/types/color.type'
+import { Colors } from '../../types/color.type'
 import { Positions } from '../../types/position.type'
 
 const StyledAppBar = styled(AppBar)<AppBarProps>(({ theme }) => ({
@@ -15,7 +15,6 @@ interface IProps {
   elevation?: number
   position?: Positions
   children?: React.ReactNode
-  style?: React.CSSProperties
 }
 
 const InsAppBar = ({
@@ -24,7 +23,6 @@ const InsAppBar = ({
   elevation = 1,
   position = 'static',
   children = null,
-  style,
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <StyledAppBar
@@ -32,7 +30,6 @@ const InsAppBar = ({
       component={component}
       elevation={elevation}
       position={position}
-      style={style}
     >
       <Toolbar className="p-0">{children}</Toolbar>
     </StyledAppBar>
