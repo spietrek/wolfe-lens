@@ -326,8 +326,8 @@
       "recurrence": 0,
       "featuredImage": "/assets/images/product4.webp",
       "productTitle": "Poc Tectal Race Helmet",
-      "productDescription": "If tubeless is the new black, Stan's NoTubes Tire Sealant is a classic secret-agent tuxedo. Just pour some of this milky goo into your tubeless-compatible tires, pop them onto the bead, and spin 'em around to get an even coating that will protect you from leaks and punctures all the way up to 1/4in. It makes it safer and easier to run tubeless tires at low pressure, and can work with wheels designed to be run tubeless or wheels that have been converted to accommodate a tubeless setup. Sharp rocks, thorns, and broken glass won't ruin your ride anymore, and the ability to ride at lower pressures will increase grip when you're in slick terrain.",
-      "productImage": "/assets/images/stans-right-top.webp",
+      "productDescription": "The Tectal Race SPIN is an advanced trail, enduro and all-mountain bike helmet with aramid penetration reinforcement, a lightweight size adjustment system and SPIN.",
+      "productImage": "/assets/images/poc-right-top.webp",
       "productDetails": [
         {
           "title": "Details"
@@ -342,9 +342,9 @@
           "title": "Faq"
         }
       ],
-      "heroImage1": "/assets/images/stans-left-top.webp",
-      "heroImage2": "/assets/images/stans-left-bottom.webp",
-      "heroImage3": "/assets/images/stans-right-bottom.webp",
+      "heroImage1": "/assets/images/poc-left-top.webp",
+      "heroImage2": "/assets/images/poc-left-bottom.webp",
+      "heroImage3": "/assets/images/poc-right-bottom.webp",
       "colors": [],
       "sizes": []
     },
