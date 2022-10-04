@@ -6,7 +6,7 @@ import {
   Radio,
 } from '@mui/material'
 import { Link } from 'react-router-dom'
-import { IProduct } from '@/types/product.type'
+import { IProduct } from '../../types/product.type'
 import InsButton from '../atoms/InsButton'
 import InsToggleButtonGroup from '../atoms/InsToggleButtonGroup'
 import InsTypography from '../atoms/InsTypography'
