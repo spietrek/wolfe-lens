@@ -10,6 +10,7 @@ interface IProps {
   loading: boolean
   product: IProduct | null
   similarProducts: IProductItem[]
+  hikingProducts: IProductItem[]
   gear: IProductItem[]
 }
 
@@ -18,6 +19,7 @@ const InsProduct = ({
   product = null,
   similarProducts = [],
   gear = [],
+  hikingProducts = [],
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <InsIndicator isLoading={loading}>
@@ -26,6 +28,11 @@ const InsProduct = ({
         <InsProductDetails product={product} />
         <InsProductCards title="You May Also Like" items={similarProducts} />
         <InsProductCards title="Complete Your Ride" items={gear} />
+        <InsProductCards
+          title="Extend Your Journey"
+          items={hikingProducts}
+          height={275}
+        />
       </InsStack>
     </InsIndicator>
   )

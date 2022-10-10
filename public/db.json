@@ -380,6 +380,139 @@
       "heroImage3": "/assets/images/stans-right-bottom.webp",
       "colors": [],
       "sizes": []
+    },
+    {
+      "id": 20001,
+      "active": true,
+      "featured": true,
+      "category": "Hiking",
+      "name": "Ridge Flex Mid Waterproof Hiking Boots",
+      "subtitle": "",
+      "price": 125,
+      "recurrence": 0,
+      "featuredImage": "/assets/images/hiking1.webp",
+      "productTitle": "Ridge Flex Mid Waterproof Hiking Boots",
+      "productDescription": "What if every step could be easier? Hike happier in the Wolfe Ridge Flex Mid Waterproof men's hiking boots, designed with Wolfe FLEX technology to reduce the energy each step takes.",
+      "productImage": "/assets/images/stans-right-top.webp",
+      "productDetails": [
+        {
+          "title": "Details"
+        },
+        {
+          "title": "Instructions"
+        },
+        {
+          "title": "Specifications"
+        },
+        {
+          "title": "Faq"
+        }
+      ],
+      "heroImage1": "/assets/images/stans-left-top.webp",
+      "heroImage2": "/assets/images/stans-left-bottom.webp",
+      "heroImage3": "/assets/images/stans-right-bottom.webp",
+      "colors": [],
+      "sizes": []
+    },
+    {
+      "id": 20002,
+      "active": true,
+      "featured": true,
+      "category": "Hiking",
+      "name": "Wool Lightweight Hiking Crew Socks",
+      "subtitle": "",
+      "price": 34,
+      "recurrence": 2,
+      "autoRenewPrice": 30.6,
+      "featuredImage": "/assets/images/hiking2.webp",
+      "productTitle": "Wool Lightweight Hiking Crew Socks",
+      "productDescription": "What if every step could be easier? Hike happier in the Wolfe Ridge Flex Mid Waterproof men's hiking boots, designed with Wolfe FLEX technology to reduce the energy each step takes.",
+      "productImage": "/assets/images/stans-right-top.webp",
+      "productDetails": [
+        {
+          "title": "Details"
+        },
+        {
+          "title": "Instructions"
+        },
+        {
+          "title": "Specifications"
+        },
+        {
+          "title": "Faq"
+        }
+      ],
+      "heroImage1": "/assets/images/stans-left-top.webp",
+      "heroImage2": "/assets/images/stans-left-bottom.webp",
+      "heroImage3": "/assets/images/stans-right-bottom.webp",
+      "colors": [],
+      "sizes": []
+    },
+    {
+      "id": 20003,
+      "active": true,
+      "featured": true,
+      "category": "Hiking",
+      "name": "Trailhead 55L Backpack",
+      "subtitle": "",
+      "price": 189,
+      "recurrence": 0,
+      "featuredImage": "/assets/images/hiking3.webp",
+      "productTitle": "Trailhead 55L Backpack",
+      "productDescription": "What if every step could be easier? Hike happier in the Wolfe Ridge Flex Mid Waterproof men's hiking boots, designed with Wolfe FLEX technology to reduce the energy each step takes.",
+      "productImage": "/assets/images/stans-right-top.webp",
+      "productDetails": [
+        {
+          "title": "Details"
+        },
+        {
+          "title": "Instructions"
+        },
+        {
+          "title": "Specifications"
+        },
+        {
+          "title": "Faq"
+        }
+      ],
+      "heroImage1": "/assets/images/stans-left-top.webp",
+      "heroImage2": "/assets/images/stans-left-bottom.webp",
+      "heroImage3": "/assets/images/stans-right-bottom.webp",
+      "colors": [],
+      "sizes": []
+    },
+    {
+      "id": 20004,
+      "active": true,
+      "featured": true,
+      "category": "Hiking",
+      "name": "Trailhead Trekking Poles - Pair",
+      "subtitle": "",
+      "price": 79.95,
+      "recurrence": 0,
+      "featuredImage": "/assets/images/hiking4.webp",
+      "productTitle": "Trailhead Trekking Poles - Pair",
+      "productDescription": "What if every step could be easier? Hike happier in the Wolfe Ridge Flex Mid Waterproof men's hiking boots, designed with Wolfe FLEX technology to reduce the energy each step takes.",
+      "productImage": "/assets/images/stans-right-top.webp",
+      "productDetails": [
+        {
+          "title": "Details"
+        },
+        {
+          "title": "Instructions"
+        },
+        {
+          "title": "Specifications"
+        },
+        {
+          "title": "Faq"
+        }
+      ],
+      "heroImage1": "/assets/images/stans-left-top.webp",
+      "heroImage2": "/assets/images/stans-left-bottom.webp",
+      "heroImage3": "/assets/images/stans-right-bottom.webp",
+      "colors": [],
+      "sizes": []
     }
   ],
   "headerLinks": [

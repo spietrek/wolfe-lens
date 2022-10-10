@@ -8,6 +8,7 @@ interface ProductState {
   isLoading: boolean
   product: IProduct | null
   similarProducts: IProductItem[]
+  hikingProducts: IProductItem[]
   gear: IProductItem[]
 }
 
@@ -19,12 +20,14 @@ export const retrieveProduct = createAsyncThunk(
       ProductDataService.getProduct(productId),
       ProductDataService.getSimilar(productId, 'Bikes'),
       ProductDataService.getGear(productId, 'Parts'),
+      ProductDataService.getHiking(),
     ])
 
     const productData = {
       product: res[0].data as unknown as IProduct,
       similarProducts: res[1].data as unknown as IProductItem[],
       gear: res[2].data as unknown as IProductItem[],
+      hikingProducts: res[3].data as unknown as IProductItem[],
     }
 
     return productData
@@ -37,6 +40,7 @@ const initialState = {
   product: null,
   similarProducts: [],
   gear: [],
+  hikingProducts: [],
 } as ProductState
 
 export const productSlice = createSlice({
@@ -51,6 +55,7 @@ export const productSlice = createSlice({
       state.product = null
       state.similarProducts = []
       state.gear = []
+      state.hikingProducts = []
     },
   },
 
@@ -73,6 +78,7 @@ export const productSlice = createSlice({
       state.product = product
       state.similarProducts = action?.payload?.similarProducts ?? []
       state.gear = action?.payload?.gear ?? []
+      state.hikingProducts = action?.payload?.hikingProducts ?? []
       state.isLoading = false
     })
 

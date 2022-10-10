@@ -15,6 +15,7 @@ interface HomePageState {
   categories: ICategory[]
   communityImages: ICommunity[]
   featuredProducts: IProductItem[]
+  hikingProducts: IProductItem[]
   hero: IHeroWithButton | null
 }
 
@@ -28,6 +29,7 @@ export const retrieveHomePageData = createAsyncThunk(
       CommunityDataService.getImages(),
       HomeHeroDataService.getHero(),
       ProductDataService.getFeatured(),
+      ProductDataService.getHiking(),
     ])
 
     const homePageData = {
@@ -35,6 +37,7 @@ export const retrieveHomePageData = createAsyncThunk(
       communityImages: res[1].data as unknown as ICommunity[],
       hero: res[2].data as unknown as IHeroWithButton | null,
       featuredProducts: res[3].data as unknown as IProductItem[],
+      hikingProducts: res[4].data as unknown as IProductItem[],
     }
 
     return homePageData
@@ -47,6 +50,7 @@ const initialState = {
   categories: [],
   communityImages: [],
   featuredProducts: [],
+  hikingProducts: [],
   hero: null,
 } as HomePageState
 
@@ -62,6 +66,7 @@ export const homePageSlice = createSlice({
       state.categories = []
       state.communityImages = []
       state.featuredProducts = []
+      state.hikingProducts = []
       state.hero = null
     },
   },
@@ -77,6 +82,7 @@ export const homePageSlice = createSlice({
       state.communityImages = action?.payload?.communityImages ?? []
       state.featuredProducts = action?.payload?.featuredProducts ?? []
       state.hero = action?.payload?.hero ?? null
+      state.hikingProducts = action?.payload?.hikingProducts ?? null
       state.isLoading = false
     })
 

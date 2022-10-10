@@ -1,40 +1,41 @@
 import { PropsWithChildren } from 'react'
-import { ICategory } from '../../types/category.type'
-import { ICommunity } from '../../types/community.type'
-import { IHeroWithButton } from '../../types/hero.type'
-import { IProductItem } from '../../types/product.type'
+import { IProduct, IProductItem } from '../../types/product.type'
 import InsIndicator from '../molecules/InsIndicator'
 import InsStack from '../molecules/InsStack'
-import InsCategories from '../organisms/InsCategories'
-import InsCommunity from '../organisms/InsCommunity'
-import InsHero from '../organisms/InsHero'
 import InsProductCards from '../organisms/InsProductCards'
+import InsProductDetails from '../organisms/InsProductDetails'
+import InsProductHero from '../organisms/InsProductHero'
 
 interface IProps {
   loading: boolean
-  categories: ICategory[]
-  communityImages: ICommunity[]
-  featuredProducts: IProductItem[]
-  hero: IHeroWithButton | null
+  product: IProduct | null
+  similarProducts: IProductItem[]
+  hikingProducts: IProductItem[]
+  gear: IProductItem[]
 }
 
-const InsHome = ({
-  loading,
-  categories = [],
-  communityImages = [],
-  featuredProducts = [],
-  hero = null,
+const InsProduct = ({
+  loading = true,
+  product = null,
+  similarProducts = [],
+  gear = [],
+  hikingProducts = [],
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <InsIndicator isLoading={loading}>
       <InsStack spacing={10}>
-        <InsHero hero={hero} />
-        <InsProductCards title="Featured Bikes" items={featuredProducts} />
-        <InsCategories items={categories} />
-        <InsCommunity images={communityImages} />
+        <InsProductHero product={product} />
+        <InsProductDetails product={product} />
+        <InsProductCards title="You May Also Like" items={similarProducts} />
+        <InsProductCards title="Complete Your Ride" items={gear} />
+        <InsProductCards
+          title="Extend Your Journey"
+          items={hikingProducts}
+          height={275}
+        />
       </InsStack>
     </InsIndicator>
   )
 }
 
-export default InsHome
+export default InsProduct

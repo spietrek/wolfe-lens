@@ -7,11 +7,13 @@ import InsTypography from '../atoms/InsTypography'
 interface IProps {
   title: string
   items: IProductItem[]
+  height?: number
 }
 
 const InsProductCards = ({
   title,
   items = [],
+  height = 215,
 }: PropsWithChildren<IProps>): JSX.Element => {
   return (
     <div className="max-w-full">
@@ -30,7 +32,7 @@ const InsProductCards = ({
                   <div className="mb-2">
                     <InsImage
                       src={item.image}
-                      height={215}
+                      height={height}
                       alt={item.altText}
                     />
                   </div>

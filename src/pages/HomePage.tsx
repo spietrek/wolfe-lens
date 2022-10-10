@@ -7,8 +7,14 @@ import { retrieveHomePageData } from '../store/slices/homePage/homePageSlice'
 const HomePage = (): JSX.Element => {
   const dispatch = useAppDispatch()
 
-  const { isLoading, categories, communityImages, featuredProducts, hero } =
-    useAppSelector((state: RootState) => state.storeHomePage)
+  const {
+    isLoading,
+    categories,
+    communityImages,
+    featuredProducts,
+    hero,
+    hikingProducts,
+  } = useAppSelector((state: RootState) => state.storeHomePage)
 
   useEffect(() => {
     void dispatch(retrieveHomePageData())
@@ -21,6 +27,7 @@ const HomePage = (): JSX.Element => {
       categories={categories}
       communityImages={communityImages}
       featuredProducts={featuredProducts}
+      hikingProducts={hikingProducts}
       hero={hero}
     />
   )

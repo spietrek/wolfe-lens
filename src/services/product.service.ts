@@ -123,6 +123,37 @@ class ProductDataService {
       ? await Promise.resolve(productsResult)
       : await Promise.reject(new Error('Product Gear endpoint not found'))
   }
+
+  async getHiking(): Promise<AxiosResponse<IProductItem[]>> {
+    const result = await http.get('/db.json')
+    const { products } = result.data as { products: IProduct[] }
+    const filteredProducts = products.filter(
+      (p: IProduct) => p.featured && p.active && p.category === 'Hiking',
+    )
+    const featured: IProductItem[] = filteredProducts.map((p: IProduct) => ({
+      id: p.id,
+      title: p.name,
+      subtitle: p.subtitle,
+      image: p.featuredImage,
+      altText: p.name,
+      link: `/hiking/${p.id}`,
+      sortOrder: p.id,
+      active: p.active,
+      featured: p.featured,
+    }))
+
+    const productsResult = {
+      data: featured ?? [],
+      status: result.status,
+      statusText: result.statusText,
+      headers: result.headers,
+      config: result.config,
+    }
+
+    return featured !== null
+      ? await Promise.resolve(productsResult)
+      : await Promise.reject(new Error('Hiking Products endpoint not found'))
+  }
 }
 
 export default new ProductDataService()

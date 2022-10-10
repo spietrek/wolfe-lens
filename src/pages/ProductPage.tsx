@@ -8,9 +8,8 @@ import { retrieveProduct } from '../store/slices/product/productSlice'
 const ProductPage = (): JSX.Element => {
   const params = useParams()
   const dispatch = useAppDispatch()
-  const { isLoading, product, similarProducts, gear } = useAppSelector(
-    (state: RootState) => state.storeProduct,
-  )
+  const { isLoading, product, similarProducts, gear, hikingProducts } =
+    useAppSelector((state: RootState) => state.storeProduct)
 
   useEffect(() => {
     const productId = params?.productId ?? '0'
@@ -24,6 +23,7 @@ const ProductPage = (): JSX.Element => {
       product={product}
       similarProducts={similarProducts}
       gear={gear}
+      hikingProducts={hikingProducts}
     />
   )
 }
