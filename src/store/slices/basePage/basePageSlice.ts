@@ -19,7 +19,7 @@ interface BasePageState {
 export const retrieveBasePageData = createAsyncThunk(
   'basePage/retrieve',
   async () => {
-    await timeout(500)
+    await timeout(200)
 
     const res = await Promise.all([
       CompanyDataService.getCompany(),

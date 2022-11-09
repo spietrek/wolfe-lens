@@ -22,7 +22,7 @@ interface HomePageState {
 export const retrieveHomePageData = createAsyncThunk(
   'homePage/retrieve',
   async () => {
-    await timeout(500)
+    await timeout(150)
 
     const res = await Promise.all([
       CategoriesDataService.getItems(),

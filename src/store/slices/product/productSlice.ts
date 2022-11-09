@@ -15,7 +15,7 @@ interface ProductState {
 export const retrieveProduct = createAsyncThunk(
   'product/retrieve',
   async (productId: string) => {
-    await timeout(500)
+    await timeout(200)
     const res = await Promise.all([
       ProductDataService.getProduct(productId),
       ProductDataService.getSimilar(productId, 'Bikes'),

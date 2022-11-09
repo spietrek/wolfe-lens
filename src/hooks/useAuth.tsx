@@ -74,7 +74,7 @@ export const AuthProvider = ({
         return { success: false, error: tempErrorMsg }
       }
 
-      await timeout(500)
+      await timeout(150)
       const res = await AuthDataService.login(tempUser)
       if (res.status === 200) {
         setEmail(email)
@@ -121,7 +121,7 @@ export const AuthProvider = ({
         password: 'cityslicka',
       }
 
-      await timeout(500)
+      await timeout(150)
       const res = await AuthDataService.login(tempUser)
 
       if (isValidUser(email) && res.status === 200) {
